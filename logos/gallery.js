@@ -66,7 +66,7 @@
     },
     tilechain(tile){
       const chain=tile.querySelector('.tile-chain');
-      chain.classList.remove('play');void chain.offsetWidth;chain.classList.add('play');
+      chain.classList.remove('is-playing');void chain.offsetWidth;chain.classList.add('is-playing');
       later(tile,()=>tile.classList.add('done'),2500);
     },
     layers(tile){
