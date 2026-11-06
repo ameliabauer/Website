@@ -65,8 +65,33 @@
       later(tile,()=>tile.classList.add('done'),2700);
     },
     tilechain(tile){
-      const chain=tile.querySelector('.tile-chain');
-      chain.classList.remove('is-playing');void chain.offsetWidth;chain.classList.add('is-playing');
+      const chain=tile.querySelector('.tc-chain');
+      if(!chain)return;
+      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      chain.querySelectorAll('.tc-wrap').forEach((wrap,i)=>{
+        const face=wrap.querySelector('.tc-tile');
+        const shadow=wrap.querySelector('.tc-shadow');
+        if(face){
+          if(reduced){face.style.transform='rotateY(180deg)';}
+          else{
+            const animation=face.animate([
+              {transform:'translateY(0) translateZ(0) rotateY(0deg)',offset:0},
+              {transform:'translateY(-10px) translateZ(16px) rotateY(100deg)',offset:.45},
+              {transform:'translateY(0) translateZ(0) rotateY(190deg)',offset:.8},
+              {transform:'translateY(0) translateZ(0) rotateY(180deg)',offset:1}
+            ],{duration:750,delay:300+i*100,easing:'cubic-bezier(.45,0,.25,1)',fill:'forwards'});
+            (tile._animations||(tile._animations=[])).push(animation);
+          }
+        }
+        if(shadow&&!reduced){
+          const animation=shadow.animate([
+            {transform:'none',opacity:1,offset:0},
+            {transform:'translateY(2px) scale(.7,.8)',opacity:.4,offset:.45},
+            {transform:'none',opacity:1,offset:1}
+          ],{duration:750,delay:300+i*100,easing:'cubic-bezier(.45,0,.25,1)',fill:'forwards'});
+          (tile._animations||(tile._animations=[])).push(animation);
+        }
+      });
       later(tile,()=>tile.classList.add('done'),2500);
     },
     layers(tile){
@@ -78,6 +103,7 @@
   function reveal(top){let r=54;const grow=()=>{r+=22;top.style.setProperty('--r',r+'px');if(r<420)requestAnimationFrame(grow);};requestAnimationFrame(grow);}
   function play(tile){
     if(tile._raf)cancelAnimationFrame(tile._raf);
+    (tile._animations||[]).forEach(animation=>animation.cancel());tile._animations=[];
     (tile._timers||[]).forEach(clearTimeout);tile._timers=[];
     tile.classList.remove('play','done','flipped');void tile.offsetWidth;tile.classList.add('play');
     const run=runners[tile.dataset.run];
