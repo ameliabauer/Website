@@ -64,6 +64,11 @@
       if(!g.childElementCount){const ns='http://www.w3.org/2000/svg';for(let i=0;i<28;i++){const s=document.createElementNS(ns,'circle');s.setAttribute('class','bgstar');s.setAttribute('cx',10+Math.random()*220);s.setAttribute('cy',8+Math.random()*162);s.setAttribute('r',.7+Math.random()*.9);s.style.setProperty('--dur',(2+Math.random()*2.5)+'s');s.style.setProperty('--del',(Math.random()*3)+'s');g.appendChild(s);}}
       later(tile,()=>tile.classList.add('done'),2700);
     },
+    tilechain(tile){
+      const chain=tile.querySelector('.tile-chain');
+      chain.classList.remove('play');void chain.offsetWidth;chain.classList.add('play');
+      later(tile,()=>tile.classList.add('done'),2500);
+    },
     layers(tile){
       const box=tile.querySelector('.layers');box.style.setProperty('--sx',0);box.style.setProperty('--sy',0);
       later(tile,()=>{box.style.setProperty('--sx',4);box.style.setProperty('--sy',4);},350);
