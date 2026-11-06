@@ -58,7 +58,7 @@ body { min-height: 100vh; display: grid; place-items: center; }
   font-family: "AMZ Outfit", "Outfit", system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
 .amz-board .board-label { font-size: calc(var(--amz-size) * .2); letter-spacing: .3em; color: var(--muted); }
 .amz-board .flap-word { display: flex; align-items: center; gap: .2em; font-weight: 300; font-size: var(--amz-size); line-height: 1; }
-.amz-board .flap-word .static { opacity: 0; }
+.amz-board .flap-word .static { opacity: 1; }
 .amz-board.play .flap-word .static { animation: amz-fadein .6s ease-out forwards; }
 .amz-board .flap-last { display: flex; align-items: center; gap: .06em; }
 .amz-board .flap { display: inline-grid; place-items: center; width: 1.05em; height: 1.25em; border-radius: 6px; background: #ffffff;
@@ -67,7 +67,7 @@ body { min-height: 100vh; display: grid; place-items: center; }
 .amz-board .glyph { display: inline-block; }
 .amz-board .glyph.flip { animation: amz-flip .09s ease-out; }
 .amz-board .flap.landed .glyph { animation: amz-land .5s cubic-bezier(.3,1.8,.5,1); }
-.amz-board .flap-word .rest { opacity: 0; transform: translateX(-.3em); }
+.amz-board .flap-word .rest { opacity: 1; transform: none; }
 .amz-board.done .flap-word .rest { animation: amz-restin .6s cubic-bezier(.2,.8,.2,1) forwards; }
 .amz-board .flap-tag { font-size: calc(var(--amz-size) * .24); letter-spacing: .3em; color: var(--muted); opacity: 0; }
 .amz-board.done .flap-tag { animation: amz-fadein .8s ease-out forwards; }
