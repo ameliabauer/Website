@@ -240,13 +240,17 @@ body { min-height: 100vh; display: grid; place-items: center; padding: 28px 18px
     later(snap, 250);
   }
   root.amzReplay = play; /* call document.querySelector('.amz-logo').amzReplay() to replay */
-  requestAnimationFrame(play);
+  root.amzIsOpen = function () { return shadeY <= SHADE_OPEN / 2; };
+  /* Start with the shade fully closed; the visitor opens it to continue. */
+  setShade(0, 0);
+  root.classList.add('play');
 })();
 (function () {
  var entry = document.getElementById('entry-screen'), main = document.getElementById('main-screen');
  var logo = entry.querySelector('.amz-logo'), entered = false;
  function enter() {
-  if (entered) return; entered = true; entry.hidden = true; main.hidden = false;
+  if (entered || !logo.amzIsOpen || !logo.amzIsOpen()) return;
+  entered = true; entry.hidden = true; main.hidden = false;
   var board = main.querySelector('.amz-board'); if (board && board.amzReplay) board.amzReplay();
  }
  logo.addEventListener('click', enter); logo.setAttribute('role','button'); logo.setAttribute('tabindex','0');
