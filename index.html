@@ -68,8 +68,7 @@ body { min-height: 100vh; display: grid; place-items: center; }
 .amz-board .glyph.flip { animation: amz-flip .09s ease-out; }
 .amz-board .flap.landed .glyph { animation: amz-land .5s cubic-bezier(.3,1.8,.5,1); }
 .amz-board .flap-word .rest { opacity: 1; transform: none; }
-.amz-board.done .flap-word .rest { animation: amz-restin .6s cubic-bezier(.2,.8,.2,1) forwards; }
-.amz-board .flap-tag { font-size: calc(var(--amz-size) * .24); letter-spacing: .3em; color: var(--muted); opacity: 0; }
+.amz-board .flap-tag { font-size: calc(var(--amz-size) * .24); letter-spacing: .3em; color: var(--muted); opacity: 1; }
 .amz-board.done .flap-tag { animation: amz-fadein .8s ease-out forwards; }
 
 @keyframes amz-fadein { to { opacity: 1; } }
