@@ -225,6 +225,29 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
 @media (max-width:520px) { .portfolio-footer { min-height:100px; } .amz-stamps { width:140px; flex-basis:140px; } }
 @media (prefers-reduced-motion:reduce) { .amz-stamps .stamp { opacity:.92; transform:none; animation:none!important; } .amz-stamps.play svg { animation:none; } }
 
+.listening-section { margin-top:48px; }
+.listening-card { position:relative; display:grid; grid-template-columns:112px minmax(0,1fr) auto; align-items:center; gap:24px; min-height:176px; padding:26px 30px; overflow:hidden; border:1px solid #e5e4f0; border-radius:18px; color:#30314f; text-decoration:none; background:linear-gradient(112deg,#f5f4fc 0%,#f8f8fc 56%,#f0f1fb 100%); box-shadow:0 8px 24px rgba(55,55,100,.045); transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; }
+.listening-card:hover { transform:translateY(-3px); border-color:#c9c8e7; box-shadow:0 14px 32px rgba(55,55,100,.09); }
+.listening-art { position:relative; display:grid; place-items:center; width:104px; height:104px; border-radius:50%; background:linear-gradient(145deg,#777bd0,#5559ad); box-shadow:inset 0 1px 5px rgba(255,255,255,.35),0 8px 18px rgba(70,72,155,.2); }
+.listening-art::before,.listening-art::after { content:""; position:absolute; border:1px solid rgba(255,255,255,.24); border-radius:50%; }
+.listening-art::before { inset:10px; }.listening-art::after { inset:19px; }
+.listening-orbit { position:absolute; width:7px; height:7px; top:13px; right:20px; border-radius:50%; background:#e8c5e8; box-shadow:0 0 0 5px rgba(232,197,232,.13); }
+.listening-wave { position:relative; z-index:1; display:flex; align-items:center; gap:4px; height:38px; }
+.listening-wave i { display:block; width:3px; height:var(--bar,18px); border-radius:4px; background:#fff; opacity:.92; }
+.listening-wave i:nth-child(2),.listening-wave i:nth-child(8) { --bar:26px; }.listening-wave i:nth-child(3),.listening-wave i:nth-child(7) { --bar:34px; }.listening-wave i:nth-child(4) { --bar:22px; }.listening-wave i:nth-child(5) { --bar:30px; }.listening-wave i:nth-child(6) { --bar:14px; }
+.listening-copy { display:flex; flex-direction:column; align-items:flex-start; min-width:0; }
+.listening-kicker { display:flex; align-items:center; gap:8px; margin-bottom:10px; color:#7475a8; font-size:9px; font-weight:700; letter-spacing:.16em; }
+.listening-live-dot { width:6px; height:6px; border-radius:50%; background:#8b91d8; box-shadow:0 0 0 4px rgba(139,145,216,.13); }
+.listening-copy strong { color:#30314f; font-size:23px; font-weight:600; letter-spacing:-.025em; }
+.listening-description { max-width:560px; margin-top:7px; color:#6f7086; font-size:13px; line-height:1.65; }
+.listening-link { display:inline-flex; align-items:center; gap:8px; margin-top:15px; color:#5559ad; font-size:12px; font-weight:600; }
+.listening-link svg { width:15px; height:15px; transition:transform .2s ease; }
+.listening-card:hover .listening-link svg { transform:translateX(4px); }
+.listening-card-note { align-self:end; padding-bottom:2px; color:#a0a0b3; font-size:8px; letter-spacing:.12em; white-space:nowrap; }
+@media (max-width:760px) { .listening-card { grid-template-columns:82px minmax(0,1fr); gap:18px; padding:22px; }.listening-art { width:78px; height:78px; }.listening-card-note { display:none; }.listening-copy strong { font-size:21px; } }
+@media (max-width:520px) { .listening-section { margin-top:36px; }.listening-card { grid-template-columns:1fr; justify-items:start; gap:17px; padding:22px; }.listening-art { width:70px; height:70px; }.listening-copy strong { font-size:20px; }.listening-description { font-size:12px; } }
+@media (prefers-reduced-motion:reduce) { .listening-card,.listening-link svg { transition:none; } }
+
 </style></head><body><main>
 <section class="screen entry" id="window-entry" aria-label="Welcome">
 <div class="amz-logo" aria-label="Amelia Zmuda">
@@ -302,6 +325,22 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
       <span class="project-arrow">Explore the logos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
   </div>
+</section>
+<section class="listening-section" aria-labelledby="listening-heading">
+  <div class="section-heading"><h2 id="listening-heading">What I’m listening to right now</h2><span>A little inspiration for the in-between moments</span></div>
+  <a class="listening-card" href="https://podcasts.apple.com/us/podcast/the-ai-daily-brief-artificial-intelligence-news/id1680633614" target="_blank" rel="noopener noreferrer" aria-label="Listen to The AI Daily Brief on Apple Podcasts">
+    <span class="listening-art" aria-hidden="true">
+      <span class="listening-orbit"></span>
+      <span class="listening-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    </span>
+    <span class="listening-copy">
+      <span class="listening-kicker"><span class="listening-live-dot"></span> CURRENTLY IN ROTATION</span>
+      <strong>The AI Daily Brief</strong>
+      <span class="listening-description">A daily dose of what’s happening in AI — and, more importantly, why it matters.</span>
+      <span class="listening-link">Listen to the podcast <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </span>
+    <span class="listening-card-note">THE AI DAILY BRIEF · NATHANIEL WHITTEMORE</span>
+  </a>
 </section>
 <footer class="portfolio-footer">
   <span class="footer-credit">AMELIA ZMUDA · FROM A TO Z</span>
