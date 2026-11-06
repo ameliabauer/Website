@@ -116,19 +116,31 @@ main { width:min(1180px, 100%); margin:0 auto; }
 .section-heading h2 { margin:0; font-size:16px; font-weight:500; letter-spacing:-.02em; }
 .section-heading span { color:#898b9c; font-size:11px; }
 .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-.project-card { display:flex; flex-direction:column; min-height:210px; padding:22px; border:1px solid #ececf3; border-radius:10px; background:#fafafe; transition:transform .2s,border-color .2s,box-shadow .2s; }
-.project-card:hover { transform:translateY(-3px); border-color:#d9daf0; box-shadow:0 10px 28px rgba(38,40,59,.06); }
+.project-card { display:flex; flex-direction:column; min-height:210px; padding:22px; border:1px solid #ececf3; border-radius:12px; background:#fafafe; color:#26283b; text-decoration:none; transition:transform .2s,border-color .2s,box-shadow .2s; }
+a.project-card { cursor:pointer; }
+a.project-card:hover { transform:translateY(-3px); border-color:#d9daf0; box-shadow:0 12px 30px rgba(38,40,59,.09); text-decoration:none; }
+a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
+.project-card h3 { text-decoration:none; }
+.project-card p { text-decoration:none; }
 .project-kicker { color:#7779a1; font-size:9px; letter-spacing:.18em; text-transform:uppercase; }
 .project-card h3 { margin:14px 0 8px; font-size:17px; font-weight:500; }
 .project-card p { margin:0; color:#77798b; font-size:12px; line-height:1.6; }
 .project-placeholder { border-style:dashed; background:linear-gradient(145deg,#fafafe,#f5f5fc); }
 .placeholder-mark { display:grid; place-items:center; width:34px; height:34px; margin-top:auto; border-radius:9px; color:#6b70ce; background:#eceefb; font-size:18px; }
 .ai-card { position:relative; overflow:hidden; color:#fff; border:0; background:linear-gradient(135deg,#555fc1,#8881d3); }
+.ai-card:hover { border-color:transparent !important; box-shadow:0 14px 34px rgba(75,79,160,.22) !important; }
+.logo-card { position:relative; overflow:hidden; border:1px solid #e4e1f5; color:#30314b; background:linear-gradient(145deg,#f5f4fc 0%,#eeeffb 55%,#f8f1fa 100%); }
+.logo-card::after { content:""; position:absolute; width:150px; height:150px; right:-42px; top:-46px; border:1px solid rgba(110,104,190,.16); border-radius:50%; box-shadow:0 0 0 14px rgba(110,104,190,.045),0 0 0 30px rgba(110,104,190,.035); pointer-events:none; }
+.logo-card .project-kicker { color:#6969a6; }
+.logo-card h3 { color:#36365d; font-size:22px; }
+.logo-card .project-arrow { color:#5557a6; }
+.logo-card:hover .project-arrow svg { transform:translateX(4px); }
 .ai-card .project-kicker,.ai-card p { color:rgba(255,255,255,.78); }
 .ai-card h3 { font-size:22px; }
 .ai-card .project-arrow { display:flex; align-items:center; gap:8px; margin-top:auto; padding-top:20px; color:#fff; font-size:12px; font-weight:500; }
 .project-arrow svg { width:15px; height:15px; transition:transform .2s; }
 .ai-card:hover .project-arrow svg { transform:translateX(4px); }
+.project-arrow { text-decoration:none; }
 .portfolio-footer { margin-top:54px; padding-top:18px; border-top:1px solid #eeeef4; color:#9697a5; font-size:10px; letter-spacing:.08em; }
 @media (max-width:760px) {
  .portfolio-header { grid-template-columns:1fr; gap:28px; padding:34px 22px; }
@@ -282,8 +294,12 @@ main { width:min(1180px, 100%); margin:0 auto; }
     <article class="project-card project-placeholder"><span class="project-kicker">Project 02 · Coming soon</span><h3>Another idea taking shape</h3><p>A work in progress — I’ll share more when it’s ready.</p><span class="placeholder-mark" aria-hidden="true">✳</span></article>
     <article class="project-card project-placeholder"><span class="project-kicker">Project 03 · Coming soon</span><h3>One more adventure</h3><p>More experiments, creative detours and things worth sharing.</p><span class="placeholder-mark" aria-hidden="true">↗</span></article>
     <a class="project-card ai-card" href="https://chat-with-a-imelia-amelia-a0ee.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open AI.melia chat">
-      <span class="project-kicker">Featured project · Conversational AI</span><h3>Meet AI.melia</h3><p>A digital counterpart built to explore what happens when personality, knowledge and conversational AI come together.</p>
-      <span class="project-arrow">Chat with AI.melia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="project-kicker">Featured project · Conversational AI</span><h3>Meet AI.melia</h3><p>An experimental digital counterpart exploring how personality, knowledge and conversational AI can come together.</p>
+      <span class="project-arrow">Explore AI.melia <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="project-card logo-card" href="/logos/" aria-label="Explore the Logo Playground">
+      <span class="project-kicker">Creative experiments · Brand design</span><h3>Logo Playground</h3><p>Eleven playful logo experiments, exploring what happens when AI-generated ideas meet human taste, feedback and creative direction.</p>
+      <span class="project-arrow">Explore the logos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
   </div>
 </section>

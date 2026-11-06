@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f7f7fb"><meta name="description" content="A playful collection of animated branding experiments and delightful micro-interactions by Amelia Zmuda."><title>Logo Playground · Amelia Zmuda</title><link rel="stylesheet" href="gallery.css"></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#8db6ea" />
+        <stop offset=".55" stop-color="#5d63c9" />
+        <stop offset="1" stop-color="#c487d4" />
+      </linearGradient>
+      <linearGradient id="win-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop id="win-sky-0" offset="0" stop-color="#7fa6e6" />
+        <stop id="win-sky-1" offset=".6" stop-color="#a99be8" />
+        <stop id="win-sky-2" offset="1" stop-color="#d7b6e6" />
+      </linearGradient>
+      <symbol id="cz" viewBox="8 4 84 156" overflow="visible"><path d="M22 36 C24 20 42 10 60 11 C80 12 88 30 77 47 C69 60 52 69 39 73 C32 76 31 83 40 84 C53 85 60 91 59 104 C57 124 45 146 30 152 C17 157 12 146 22 136 C35 124 62 115 86 109" /></symbol>
+      <filter id="puff" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.3" /></filter>
+      <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" />
+      </filter>
+    </defs>
+  </svg>
+<header class="gallery-top">
+  <div class="gallery-heading">
+    <p class="gallery-eyebrow"><span class="eyebrow-line"></span> A human + AI creative experiment</p>
+    <h1>Logo Playground</h1>
+    <section class="intro-panel" aria-label="About this collection">
+      <div class="intro-main">
+        <p class="intro-kicker">A little curiosity, in motion</p>
+        <p class="gallery-intro">I’ve always loved the little details that make a digital experience feel alive: a clever transition, an unexpected reveal, a tiny animation that makes you smile. The best micro-interactions reward curiosity. You hover, something happens. You click, there’s a little surprise. Suddenly, a website feels less like a page and more like a place with personality. While building the branding for my own website, I started playing with how my name and visual identity could move, transform and surprise. I used AI as a creative partner, shaping the brief, steering the iterations and following the ideas that made me smile. A few were far too delightful to keep behind the scenes, so they escaped into this little playground. Click around. Poke at things. I hope you find yourself wanting to see what happens next.</p>
+      </div>
+      <aside class="intro-guide" aria-label="How to explore">
+        <p class="guide-title">A tiny field guide</p>
+        <div class="guide-step"><span>01</span><p><strong>Hover</strong><small>See what stirs.</small></p></div>
+        <div class="guide-step"><span>02</span><p><strong>Click</strong><small>Watch it unfold again.</small></p></div>
+        <div class="guide-step"><span>03</span><p><strong>Explore</strong><small>There’s more than meets the eye.</small></p></div>
+      </aside>
+    </section>
+  </div>
+  <div class="gallery-actions"><button id="replay" type="button">Replay all</button><a href="/">← Back to portfolio</a></div>
+</header>
+<div class="grid"><section class="tile" data-screen-label="02 Boarding pass">
+      <div class="art">
+        <div class="pass">
+          <div class="main">
+            <span class="lbl">PASSENGER</span>
+            <span class="pname">Amelia Zmuda</span>
+            <div class="route">
+              <span class="code">A</span>
+              <svg viewBox="0 0 100 20" aria-hidden="true"><line class="rl" x1="0" y1="10" x2="100" y2="10" /><g class="rplane"><path class="plane" transform="translate(4 10) scale(.9)" d="M-9 -1.6 L4 -1.6 Q9 -1.4 10 0 Q9 1.4 4 1.6 L-9 1.6 Z M-1 -1.6 L-6 -8 L-3 -8 L4 -1.6 Z M-1 1.6 L-6 8 L-3 8 L4 1.6 Z M-9 -1.6 L-11 -5 L-9 -5 L-6 -1.6 Z M-9 1.6 L-11 5 L-9 5 L-6 1.6 Z" /></g></svg>
+              <span class="code hy-grad">Z</span>
+            </div>
+          </div>
+          <div class="stub"><span class="lbl">GATE</span><svg class="czg gate-z" aria-hidden="true"><use href="#cz" /></svg><span class="lbl">SEAT 1A</span></div>
+        </div>
+      </div>
+      <div class="meta"><div class="name"><span>Boarding pass</span></div><p>A pass slides into view, a tiny plane flies the route from A to Z, then the stub tears away at Gate Z.</p></div>
+    </section>
+<section class="tile" data-run="flight" data-screen-label="03 Flight path">
+      <div class="art">
+        <svg class="flight" viewBox="0 0 280 200" role="img" aria-label="Flight path from A to Z">
+          <defs><mask id="fp-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="280" height="200"><path class="fp-mpath" pathLength="1" d="M34 140 C84 36 196 36 246 128" /></mask></defs>
+          <path class="fp-trail" d="M34 140 C84 36 196 36 246 128" mask="url(#fp-mask)" />
+          <circle class="fp-dot" cx="34" cy="140" r="5" />
+          <circle class="fp-ring" cx="246" cy="128" r="6" />
+          <circle class="fp-end" cx="246" cy="128" r="6" />
+          <text class="fp-A" x="34" y="166" text-anchor="middle">A</text>
+          <use class="czu fp-Z" href="#cz" x="235" y="137" width="22" height="40" />
+          <g class="plane"><path d="M-9 -1.6 L4 -1.6 Q9 -1.4 10 0 Q9 1.4 4 1.6 L-9 1.6 Z M-1 -1.6 L-6 -8 L-3 -8 L4 -1.6 Z M-1 1.6 L-6 8 L-3 8 L4 1.6 Z M-9 -1.6 L-11 -5 L-9 -5 L-6 -1.6 Z M-9 1.6 L-11 5 L-9 5 L-6 1.6 Z" /></g>
+          <text class="svg-cap" x="140" y="194" text-anchor="middle">Amelia Zmuda</text>
+        </svg>
+      </div>
+      <div class="meta"><div class="name"><span>Flight path</span></div><p>A plane traces a dotted great-circle route from A to Z, touches down with a soft ripple, and the name appears.</p></div>
+    </section>
+<section class="tile" data-hover="1" data-screen-label="05 Luggage tag">
+      <div class="art">
+        <svg class="tag" viewBox="0 0 280 220" role="img" aria-label="Luggage tag">
+          <g class="swing">
+            <path d="M140 8 C134 26 146 38 140 60" fill="none" stroke="#a99be8" stroke-width="1.5" />
+            <path d="M98 70 L122 52 L158 52 L182 70 L182 198 Q182 208 172 208 L108 208 Q98 208 98 198 Z" fill="#eceefb" />
+          <circle cx="140" cy="66" r="6" fill="#ffffff" stroke="#a99be8" stroke-width="1.5" />
+          <text class="tag-code" x="140" y="118" text-anchor="middle">ABZ</text>
+          <line x1="112" y1="132" x2="168" y2="132" stroke="#d9d8f1" stroke-width="1" />
+          <text class="tag-small" x="140" y="152" text-anchor="middle">AMELIA</text>
+          <text class="tag-small" x="140" y="167" text-anchor="middle">ZMUDA</text>
+          <rect x="98" y="182" width="84" height="12" fill="url(#sky-grad)" />
+          </g>
+        </svg>
+      </div>
+      <div class="meta"><div class="name"><span>Luggage tag</span></div><p>A bag tag with your own airport code, ABZ, swings on its string and settles. Hover to give it another nudge.</p></div>
+    </section>
+<section class="tile" data-run="postcard" data-screen-label="07 Postcard">
+      <div class="art">
+        <div class="card-scene">
+          <div class="card">
+            <div class="face back">
+              <svg viewBox="0 0 250 156" aria-hidden="true">
+                <text class="script" x="18" y="66" font-size="24" fill="#5d63c9">Wish you</text>
+                <text class="script" x="18" y="96" font-size="24" fill="#5d63c9">were here</text>
+                <line x1="128" y1="18" x2="128" y2="138" stroke="#d9d8f1" stroke-width="1" />
+                <rect x="190" y="14" width="44" height="52" fill="#ffffff" stroke="#a99be8" stroke-dasharray="3 2" />
+                <use class="czu" href="#cz" x="201" y="19" width="22" height="41" style="stroke:url(#sky-grad); stroke-width:9" />
+                <circle class="pm" cx="186" cy="40" r="17" pathLength="1" style="animation-delay:.5s" />
+                <path class="pm" pathLength="1" d="M146 30 q6 -5 12 0 t12 0 t12 0 t12 0" style="animation-delay:.7s" />
+                <path class="pm" pathLength="1" d="M146 40 q6 -5 12 0 t12 0 t12 0 t12 0" style="animation-delay:.8s" />
+                <path class="pm" pathLength="1" d="M146 50 q6 -5 12 0 t12 0 t12 0 t12 0" style="animation-delay:.9s" />
+                <line class="addr" x1="140" y1="92" x2="232" y2="92" pathLength="1" style="animation-delay:1.1s" />
+                <line class="addr" x1="140" y1="108" x2="232" y2="108" pathLength="1" style="animation-delay:1.2s" />
+                <line class="addr" x1="140" y1="124" x2="232" y2="124" pathLength="1" style="animation-delay:1.3s" />
+              </svg>
+            </div>
+            <div class="face front"><span class="greet">GREETINGS FROM</span><span class="big">Amelia Zmuda</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="meta"><div class="name"><span>Postcard</span></div><p>A postcard gets its Z stamp and postmark, then flips over to reveal "Greetings from Amelia Zmuda".</p></div>
+    </section>
+<section class="tile sky-tile" data-run="sky" data-screen-label="10 Skywriting">
+      <div class="art">
+        <svg class="sky" viewBox="0 0 260 220" role="img" aria-label="A plane skywriting a cursive Z">
+          <path class="sky-trail" pathLength="1" d="M 89.4 46.6 C 92.3 29.3 118.4 18.5 144.5 19.6 C 173.5 20.6 185.1 40.1 169.1 58.4 C 157.6 72.5 132.9 82.2 114.0 86.5 C 103.9 89.8 102.4 97.3 115.5 98.4 C 134.3 99.5 144.5 106.0 143.1 120.0 C 140.1 141.6 122.8 165.4 101.0 171.8 C 82.1 177.2 74.9 165.4 89.4 154.6 C 108.2 141.6 147.4 131.9 182.2 125.4" />
+          <g class="plane"><path d="M-9 -1.6 L4 -1.6 Q9 -1.4 10 0 Q9 1.4 4 1.6 L-9 1.6 Z M-1 -1.6 L-6 -8 L-3 -8 L4 -1.6 Z M-1 1.6 L-6 8 L-3 8 L4 1.6 Z M-9 -1.6 L-11 -5 L-9 -5 L-6 -1.6 Z M-9 1.6 L-11 5 L-9 5 L-6 1.6 Z" /></g>
+          <text class="svg-cap" x="130" y="210" text-anchor="middle">Amelia Zmuda</text>
+        </svg>
+      </div>
+      <div class="meta"><div class="name"><span>Skywriting</span></div><p>A little plane skywrites a soft cursive Z, and the trail slowly puffs out like real vapour.</p></div>
+    </section>
+<section class="tile" data-done-at="2200" data-screen-label="16 Neon">
+      <div class="art">
+        <div class="neon" aria-label="Amelia Zmuda"><span class="tube1">Amelia&nbsp;</span><span class="tube2"><svg class="czg neon-z" aria-hidden="true"><use href="#cz" /></svg></span><span class="tube1">muda</span></div>
+      </div>
+      <div class="meta"><div class="name"><span>Neon</span></div><p>The name flickers on like a neon sign; the script Z buzzes back to life every few seconds.</p></div>
+    </section>
+<section class="tile" data-run="pixel" data-screen-label="18 Pixel to polish">
+      <div class="art">
+        <svg class="pixel" viewBox="0 0 240 210" role="img" aria-label="Pixel Z melting into a flowing script Z">
+          <defs><filter class="px-melt" id="px-melt" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB"><feGaussianBlur class="px-blur" in="SourceGraphic" stdDeviation="0" result="b"/><feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8"/></filter></defs>
+          <g class="px-morph"><g class="pix"></g><text class="script pz" x="120" y="142" text-anchor="middle" font-size="150" fill="url(#sky-grad)">Z</text></g>
+          <text class="svg-cap" x="120" y="200" text-anchor="middle">Amelia Zmuda</text>
+        </svg>
+      </div>
+      <div class="meta"><div class="name"><span>Pixel to polish</span></div><p>Individual pixels assemble into a flowing, gradient script Z.</p></div>
+    </section>
+<section class="tile" data-run="spotlight" data-screen-label="19 Spotlight">
+      <div class="art">
+        <div class="stack-c"><div class="spot"><div class="spot-base">Amelia <svg class="czg" aria-hidden="true"><use href="#cz" /></svg>muda</div><div class="spot-top hy-grad">Amelia <svg class="czg" aria-hidden="true"><use href="#cz" /></svg>muda</div></div><div class="hint">MOVE YOUR CURSOR OVER IT</div></div>
+      </div>
+      <div class="meta"><div class="name"><span>Spotlight</span></div><p>A soft spotlight sweeps across and lights the name up in colour. Afterwards it follows your cursor.</p></div>
+    </section>
+<section class="tile" data-run="stars" data-screen-label="21 Constellation">
+      <div class="art">
+        <svg class="stars" viewBox="0 0 240 210" role="img" aria-label="Z constellation">
+          <g class="bgstars"></g>
+          <path class="cl" pathLength="1" d="M70 50 L118 44 L172 52 L120 100 L70 148 L128 152 L176 144" />
+          <circle class="zs" cx="70" cy="50" r="3.6" style="animation-delay:.2s" />
+          <circle class="zs" cx="118" cy="44" r="2.8" style="animation-delay:.32s" />
+          <circle class="zs" cx="172" cy="52" r="3.8" style="animation-delay:.44s" />
+          <circle class="zs" cx="120" cy="100" r="2.6" style="animation-delay:.56s" />
+          <circle class="zs" cx="70" cy="148" r="3.8" style="animation-delay:.68s" />
+          <circle class="zs" cx="128" cy="152" r="2.8" style="animation-delay:.8s" />
+          <circle class="zs" cx="176" cy="144" r="3.6" style="animation-delay:.92s" />
+          <text class="svg-cap" x="120" y="198" text-anchor="middle">Amelia Zmuda</text>
+        </svg>
+      </div>
+      <div class="meta"><div class="name"><span>Constellation</span></div><p>Stars appear in a twinkling sky and join up into a Z-shaped constellation.</p></div>
+    </section>
+<section class="tile" data-done-at="2800" data-screen-label="22 Liquid fill">
+      <div class="art">
+        <svg class="liquid" viewBox="0 0 300 130" role="img" aria-label="Amelia Zmuda filling with colour">
+          <defs><mask id="lq-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="300" height="130"><text class="lq-text" x="140" y="84" text-anchor="end" fill="#ffffff">Amelia</text><use href="#cz" x="144" y="49" width="28" height="52" style="fill:none; stroke:#ffffff; stroke-width:12; stroke-linecap:round; stroke-linejoin:round" /><text class="lq-text" x="176" y="84" fill="#ffffff">muda</text></mask></defs>
+          <text class="lq-text lq-outline" x="140" y="84" text-anchor="end">Amelia</text><use href="#cz" x="144" y="49" width="28" height="52" style="fill:none; stroke:#ecebf8; stroke-width:12; stroke-linecap:round; stroke-linejoin:round" /><text class="lq-text lq-outline" x="176" y="84">muda</text>
+          <g mask="url(#lq-mask)"><g class="lq-rise"><g class="lq-wave"><path d="M-300 0 q25 -9 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 L600 200 L-300 200 Z" fill="url(#sky-grad)" /></g></g></g>
+        </svg>
+      </div>
+      <div class="meta"><div class="name"><span>Liquid fill</span></div><p>The name fills up from the bottom with a gently rolling wave of colour.</p></div>
+    </section>
+<section class="tile" data-run="layers" data-screen-label="23 Layered depth">
+      <div class="art">
+        <div class="stack-c">
+          <div class="layers"><span class="ly d3" style="--d:3"><svg class="czg" aria-hidden="true"><use href="#cz" /></svg></span><span class="ly d2" style="--d:2"><svg class="czg" aria-hidden="true"><use href="#cz" /></svg></span><span class="ly d1" style="--d:1"><svg class="czg" aria-hidden="true"><use href="#cz" /></svg></span><span class="ly d0" style="--d:0"><svg class="czg" aria-hidden="true"><use href="#cz" /></svg></span></div>
+          <div class="small-cap">AMELIA ZMUDA</div>
+        </div>
+      </div>
+      <div class="meta"><div class="name"><span>Layered depth</span></div><p>Four paper-cut layers of the Z fan out to give it depth, then tilt to follow your cursor.</p></div>
+    </section>
+    <section class="tile" data-run="tilechain" data-screen-label="12 Tile chain">
+      <div class="art">
+        <div class="tile-chain" role="img" aria-label="Amelia Zmuda revealed as a chain of flipping tiles">
+          <div class="tc-chain" aria-hidden="true">
+            <span class="tc-wrap" style="--i:0"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">A</span></span></span>
+            <span class="tc-wrap" style="--i:1"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">m</span></span></span>
+            <span class="tc-wrap" style="--i:2"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">e</span></span></span>
+            <span class="tc-wrap" style="--i:3"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">l</span></span></span>
+            <span class="tc-wrap" style="--i:4"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">i</span></span></span>
+            <span class="tc-wrap" style="--i:5"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">a</span></span></span>
+            <span class="tc-wrap tc-gap" style="--i:6"><span class="tc-shadow"></span><span class="tc-tile tc-empty"><span class="tc-front"></span></span></span>
+            <span class="tc-wrap tc-z" style="--i:7"><span class="tc-shadow"></span><span class="tc-tile tc-special"><span class="tc-front"></span><span class="tc-back"><svg class="tc-z-mark" aria-hidden="true"><use href="#cz"/></svg></span></span></span>
+            <span class="tc-wrap" style="--i:8"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">m</span></span></span>
+            <span class="tc-wrap" style="--i:9"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">u</span></span></span>
+            <span class="tc-wrap" style="--i:10"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">d</span></span></span>
+            <span class="tc-wrap" style="--i:11"><span class="tc-shadow"></span><span class="tc-tile"><span class="tc-front"></span><span class="tc-back">a</span></span></span>
+          </div>
+        </div>
+      </div>
+      <div class="meta"><div class="name"><span>Tile chain</span></div><p>A chain of little gradient tiles flips one by one to reveal Amelia Zmuda, with a soft lift and shadow as each letter turns.</p></div>
+    </section>
+</div>
+<script src="gallery.js"></script>
+</body></html>
