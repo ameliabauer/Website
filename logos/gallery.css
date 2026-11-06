@@ -13,3 +13,12 @@ body{padding:32px 24px 56px}.gallery-top{max-width:1180px;margin:0 auto 28px;dis
 @keyframes ribbon-top{from{opacity:0;transform:translate(-24px,-16px) rotate(-8deg)}to{opacity:1;transform:none}}
 @keyframes ribbon-diag{from{opacity:0;transform:translate(22px,-16px) rotate(8deg)}to{opacity:1;transform:none}}
 @keyframes ribbon-bottom{from{opacity:0;transform:translate(-18px,18px) rotate(7deg)}to{opacity:1;transform:none}}
+
+/* Pixel to polish: liquid pixel merge into the handwritten mark */
+.px-morph{isolation:isolate}
+.px{opacity:0;transform:scale(0);transform-box:fill-box;transform-origin:center}
+.play .px{animation:pxin .3s ease-out forwards}
+.pz{opacity:0}
+.pixel .svg-cap{opacity:0}
+.pixel.done .svg-cap{animation:fadein .8s ease-out forwards}
+.pixel .pix{transition:opacity .05s linear}
