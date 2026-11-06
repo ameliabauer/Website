@@ -183,7 +183,10 @@ main { width:min(1180px, 100%); margin:0 auto; }
 
 
 
-#window-entry { position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px; background:#f7f7fb; transition:opacity .65s ease, visibility .65s ease; }
+#window-entry { position:fixed; inset:0; z-index:1000; box-sizing:border-box; width:100%; height:100vh; height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; padding:24px; margin:0; background:#f7f7fb; overflow:hidden; transition:opacity .65s ease, visibility .65s ease; }
+#window-entry .amz-logo { width:min(340px, 82vw); max-width:100%; margin:0 auto; }
+#window-entry .enter-hint { flex:0 0 auto; width:100%; margin:18px 0 0; text-align:center; }
+@media (max-height:560px) { #window-entry { overflow-y:auto; justify-content:flex-start; } #window-entry .amz-logo { width:min(260px, 58vh); } }
 #window-entry.leaving { opacity:0; visibility:hidden; pointer-events:none; }
 #window-entry .amz-logo { cursor:pointer; }
 #window-entry .enter-hint { margin:18px 0 0; text-align:center; color:#777b91; font-size:12px; letter-spacing:.12em; }
@@ -318,6 +321,35 @@ main { width:min(1180px, 100%); margin:0 auto; }
 </div>
 </main>
 <script>
+
+(function () {
+  var AZ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  document.querySelectorAll('.amz-board').forEach(function (board) {
+    var flap = board.querySelector('.flap');
+    var glyph = board.querySelector('.glyph');
+    var timers = [];
+    function play() {
+      timers.forEach(clearTimeout); timers = [];
+      board.classList.remove('play', 'done'); flap.classList.remove('landed');
+      void board.offsetWidth;
+      board.classList.add('play');
+      glyph.textContent = 'A';
+      var t = 500;
+      AZ.split('').forEach(function (ch, i) {
+        t += 40 + Math.pow(Math.max(0, i - 16), 2) * 9;   /* fast at first, slowing into Z */
+        timers.push(setTimeout(function () {
+          glyph.textContent = ch;
+          glyph.classList.remove('flip'); void glyph.offsetWidth; glyph.classList.add('flip');
+          if (ch === 'Z') { flap.classList.add('landed'); board.classList.add('done'); }
+        }, t));
+      });
+    }
+    board.addEventListener('click', play);
+    board.amzReplay = play;
+    requestAnimationFrame(play);
+  });
+})();
+
 
 (function () {
   var root = document.querySelector('.amz-logo');
