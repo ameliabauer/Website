@@ -361,6 +361,7 @@ main { width:min(1180px, 100%); margin:0 auto; }
     name.classList.add('instant'); scatter(1); void name.offsetWidth; name.classList.remove('instant');
     later(snap, 250);
   }
+  root.amzOpen = function () { takeOver(); setShade(SHADE_OPEN, 320); };
   root.amzReplay = play; /* call document.querySelector('.amz-logo').amzReplay() to replay */
   root.amzIsOpen = function () { return shadeY <= SHADE_OPEN / 2; };
   /* Start with the shade fully closed; the visitor opens it to continue. */
@@ -392,8 +393,7 @@ main { width:min(1180px, 100%); margin:0 auto; }
   logo.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      var svg = logo.querySelector('.amz-window');
-      if (svg) svg.dispatchEvent(new PointerEvent('pointerdown', {bubbles:true}));
+      if (logo.amzOpen) logo.amzOpen();
       window.setTimeout(enterWhenOpen, 360);
     }
   });
