@@ -189,6 +189,27 @@ main { width:min(1180px, 100%); margin:0 auto; }
 #window-entry .enter-hint { margin:18px 0 0; text-align:center; color:#777b91; font-size:12px; letter-spacing:.12em; }
 #portfolio-content[hidden] { display:none; }
 
+
+/* Passport-stamp footer credit */
+.portfolio-footer { display:flex; align-items:center; justify-content:space-between; gap:18px; min-height:112px; }
+.footer-credit { align-self:center; }
+.amz-stamps { --peri:#5d63c9; --mauve:#c487d4; width:176px; flex:0 0 176px; opacity:.42; cursor:default; }
+.amz-stamps svg { display:block; width:100%; height:auto; overflow:visible; }
+.amz-stamps .stamp { opacity:0; transform-box:fill-box; transform-origin:center; transform:scale(2.3); }
+.amz-stamps.play .st1 { animation:amz-stamp-thud .42s cubic-bezier(.55,0,.8,.2) .4s forwards; }
+.amz-stamps.play .st2 { animation:amz-stamp-thud .42s cubic-bezier(.55,0,.8,.2) 1.4s forwards; }
+.amz-stamps.play svg { animation:amz-stamp-shake .22s ease .82s,amz-stamp-shake2 .22s ease 1.82s; }
+.amz-stamps .ink-peri { fill:none; stroke:var(--peri); }
+.amz-stamps .ink-mauve { fill:none; stroke:var(--mauve); }
+.amz-stamps .ink-text { fill:var(--peri); font-family:"AMZ Outfit","Outfit",system-ui,sans-serif; }
+.amz-stamps .ink-text.m { fill:var(--mauve); }
+.amz-stamps .czu { fill:none; stroke:var(--mauve); stroke-width:9; stroke-linecap:round; stroke-linejoin:round; }
+@keyframes amz-stamp-thud { 0%{opacity:0;transform:scale(2.3)} 80%{opacity:.95;transform:scale(.95)} 100%{opacity:.92;transform:scale(1)} }
+@keyframes amz-stamp-shake { 30%{transform:translate(1.5px,2px)} 60%{transform:translate(-1px,-1px)} }
+@keyframes amz-stamp-shake2 { 30%{transform:translate(-1.5px,2px)} 60%{transform:translate(1px,-1px)} }
+@media (max-width:520px) { .portfolio-footer { min-height:100px; } .amz-stamps { width:140px; flex-basis:140px; } }
+@media (prefers-reduced-motion:reduce) { .amz-stamps .stamp { opacity:.92; transform:none; animation:none!important; } .amz-stamps.play svg { animation:none; } }
+
 </style></head><body><main>
 <section class="screen entry" id="window-entry" aria-label="Welcome">
 <div class="amz-logo" aria-label="Amelia Zmuda">
@@ -263,7 +284,37 @@ main { width:min(1180px, 100%); margin:0 auto; }
     </a>
   </div>
 </section>
-<footer class="portfolio-footer">AMELIA ZMUDA · FROM A TO Z</footer>
+<footer class="portfolio-footer">
+  <span class="footer-credit">AMELIA ZMUDA · FROM A TO Z</span>
+  <div class="amz-stamps" role="img" aria-label="Passport stamps: Arrived Amelia Zmuda, From A to Z">
+    <svg viewBox="0 0 280 200" aria-hidden="true">
+      <defs>
+        <symbol id="amz-stamp-cz" viewBox="8 4 84 156" overflow="visible"><path d="M22 36 C24 20 42 10 60 11 C80 12 88 30 77 47 C69 60 52 69 39 73 C32 76 31 83 40 84 C53 85 60 91 59 104 C57 124 45 146 30 152 C17 157 12 146 22 136 C35 124 62 115 86 109" /></symbol>
+        <filter id="amz-stamp-ink" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" />
+        </filter>
+      </defs>
+      <g transform="translate(130 92) rotate(-8)">
+        <g class="stamp st1" filter="url(#amz-stamp-ink)">
+          <rect class="ink-peri" x="-104" y="-48" width="208" height="96" rx="10" stroke-width="3" />
+          <rect class="ink-peri" x="-95" y="-39" width="190" height="78" rx="6" stroke-width="1.2" />
+          <text class="ink-text" x="0" y="-18" text-anchor="middle" font-size="9" letter-spacing="3">ARRIVED</text>
+          <text class="ink-text" x="0" y="10" text-anchor="middle" font-size="22" font-weight="500" letter-spacing="1">AMELIA ZMUDA</text>
+          <text class="ink-text" x="0" y="30" text-anchor="middle" font-size="9" letter-spacing="3">FROM A TO Z</text>
+        </g>
+      </g>
+      <g transform="translate(220 150) rotate(14)">
+        <g class="stamp st2" filter="url(#amz-stamp-ink)">
+          <circle class="ink-mauve" r="34" stroke-width="2.5" />
+          <circle class="ink-mauve" r="27" stroke-width="1" />
+          <use class="czu" href="#amz-stamp-cz" x="-9" y="-19" width="18" height="34" />
+          <text class="ink-text m" x="0" y="22" text-anchor="middle" font-size="6" letter-spacing="2">ENTRY</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</footer>
 </div>
 </main>
 <script>
@@ -384,6 +435,8 @@ main { width:min(1180px, 100%); margin:0 auto; }
       portfolio.hidden = false;
       var board = portfolio.querySelector('.amz-board');
       if (board && board.amzReplay) board.amzReplay();
+      var stamps = portfolio.querySelector('.amz-stamps');
+      if (stamps) { requestAnimationFrame(function () { stamps.classList.add('play'); }); }
     }, 650);
   }
   logo.addEventListener('click', function () { window.setTimeout(enterWhenOpen, 360); });
