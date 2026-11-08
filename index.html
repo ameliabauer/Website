@@ -112,6 +112,17 @@ main { width:min(1180px, 100%); margin:0 auto; }
 .social-link:hover { transform:translateY(-2px); border-color:#aeb2e8; }
 .social-link svg { width:16px; height:16px; }
 .portfolio-section { margin-top:48px; }
+.perspective-feature { position:relative; display:flex; align-items:stretch; justify-content:space-between; gap:32px; min-height:218px; padding:30px 34px; overflow:hidden; border:1px solid #e7e6f3; border-radius:14px; color:#292a43; text-decoration:none; background:linear-gradient(112deg,#f5f5fc 0%,#f0effa 58%,#f8f2fa 100%); transition:transform .2s,border-color .2s,box-shadow .2s; }
+.perspective-feature:hover { transform:translateY(-3px); border-color:#d8d7ed; box-shadow:0 14px 34px rgba(49,48,92,.09); }
+.perspective-feature:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
+.perspective-copy { position:relative; z-index:1; max-width:700px; display:flex; flex-direction:column; align-items:flex-start; }
+.perspective-copy h3 { max-width:660px; margin:13px 0 9px; color:#30314b; font-size:clamp(21px,2.7vw,30px); line-height:1.16; letter-spacing:-.04em; font-weight:500; }
+.perspective-copy p { max-width:640px; margin:0; color:#71738a; font-size:13px; line-height:1.7; }
+.perspective-feature .project-arrow { display:flex; align-items:center; gap:8px; margin-top:20px; color:#5557a6; font-size:12px; font-weight:500; }
+.perspective-feature:hover .project-arrow svg { transform:translateX(4px); }
+.perspective-mark { align-self:stretch; flex:0 0 170px; display:flex; flex-direction:column; align-items:flex-end; justify-content:space-between; color:#7774b7; }
+.perspective-mark span { display:grid; place-items:center; width:76px; height:76px; border:1px solid rgba(104,99,174,.2); border-radius:50%; font-size:42px; font-weight:300; line-height:1; }
+.perspective-mark small { color:#9694b6; font-size:8px; line-height:1.7; letter-spacing:.18em; text-align:right; }
 .section-heading { display:flex; align-items:baseline; gap:12px; margin-bottom:16px; }
 .section-heading h2 { margin:0; font-size:16px; font-weight:500; letter-spacing:-.02em; }
 .section-heading span { color:#898b9c; font-size:11px; }
@@ -153,6 +164,11 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
  body { padding:10px 12px 38px; }
  .portfolio-header { padding:30px 18px; }
  .project-grid { grid-template-columns:1fr; }
+ .perspective-feature { min-height:0; padding:24px 22px; }
+ .perspective-mark { flex-basis:64px; }
+ .perspective-mark span { width:48px; height:48px; font-size:29px; }
+ .perspective-mark small { display:none; }
+ .perspective-copy h3 { font-size:23px; }
  .project-card { min-height:180px; }
  .portfolio-section { margin-top:36px; }
 }
@@ -286,6 +302,20 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
     </div>
   </div>
 </header>
+
+
+<section class="portfolio-section perspectives-section" aria-labelledby="perspectives-heading">
+  <div class="section-heading"><h2 id="perspectives-heading">Perspectives</h2><span>Ideas on how work is changing</span></div>
+  <a class="perspective-feature" href="https://www.linkedin.com/pulse/your-developers-arent-only-ones-who-need-coding-agents-amelia-bauer-5vp5e/" target="_blank" rel="noopener noreferrer" aria-label="Read Your Developers Aren't the Only Ones Who Need Coding Agents on LinkedIn">
+    <div class="perspective-copy">
+      <span class="project-kicker">Latest article · LinkedIn</span>
+      <h3>Your Developers Aren’t the Only Ones Who Need Coding Agents</h3>
+      <p>Coding agents are changing more than the way software gets built. Their potential reaches well beyond engineering — reshaping how teams across an organisation can think, make and get work done.</p>
+      <span class="project-arrow">Read the article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </div>
+    <div class="perspective-mark" aria-hidden="true"><span>↗</span><small>FIELD NOTES<br>01 / AI & WORK</small></div>
+  </a>
+</section>
 
 <section class="portfolio-section" aria-labelledby="passion-heading">
   <div class="section-heading"><h2 id="passion-heading">Passion projects</h2><span>Side quests, experiments & things I’m curious about</span></div>
