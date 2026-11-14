@@ -120,9 +120,9 @@ main { width:min(1180px, 100%); margin:0 auto; }
 .perspective-copy p { max-width:640px; margin:0; color:#71738a; font-size:13px; line-height:1.7; }
 .perspective-feature .project-arrow { display:flex; align-items:center; gap:8px; margin-top:20px; color:#5557a6; font-size:12px; font-weight:500; }
 .perspective-feature:hover .project-arrow svg { transform:translateX(4px); }
-.perspective-mark { align-self:stretch; flex:0 0 170px; display:flex; flex-direction:column; align-items:flex-end; justify-content:space-between; color:#7774b7; }
-.perspective-mark span { display:grid; place-items:center; width:76px; height:76px; border:1px solid rgba(104,99,174,.2); border-radius:50%; font-size:42px; font-weight:300; line-height:1; }
-.perspective-mark small { color:#9694b6; font-size:8px; line-height:1.7; letter-spacing:.18em; text-align:right; }
+.perspective-image { flex:0 0 34%; min-width:250px; align-self:stretch; overflow:hidden; border-radius:9px; background:#e9e8f4; }
+.perspective-image img { display:block; width:100%; height:100%; min-height:190px; object-fit:cover; object-position:center; }
+
 .section-heading { display:flex; align-items:baseline; gap:12px; margin-bottom:16px; }
 .section-heading h2 { margin:0; font-size:16px; font-weight:500; letter-spacing:-.02em; }
 .section-heading span { color:#898b9c; font-size:11px; }
@@ -165,9 +165,9 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
  .portfolio-header { padding:30px 18px; }
  .project-grid { grid-template-columns:1fr; }
  .perspective-feature { min-height:0; padding:24px 22px; }
- .perspective-mark { flex-basis:64px; }
- .perspective-mark span { width:48px; height:48px; font-size:29px; }
- .perspective-mark small { display:none; }
+ .perspective-feature { flex-direction:column; }
+ .perspective-image { flex:0 0 auto; width:100%; min-width:0; height:190px; }
+ .perspective-image img { min-height:190px; }
  .perspective-copy h3 { font-size:23px; }
  .project-card { min-height:180px; }
  .portfolio-section { margin-top:36px; }
@@ -322,7 +322,7 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
       <p>Coding agents are changing more than the way software gets built. Their potential reaches well beyond engineering — reshaping how teams across an organisation can think, make and get work done.</p>
       <span class="project-arrow">Read the article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </div>
-    <div class="perspective-mark" aria-hidden="true"><span>↗</span><small>FIELD NOTES<br>01 / AI & WORK</small></div>
+    <div class="perspective-image" aria-hidden="true"><img src="https://media.licdn.com/dms/image/v2/D4E12AQFeQJ2SJ99EJg/article-cover_image-shrink_720_1280/B4EaGgiOq_IYAQ-/0/1793694702724?e=2147483647&t=jfPzYgsXwd-m46FNxF35NGGDxJsR7UebyfG_Pk05N9U&v=beta" alt="" loading="lazy"></div>
   </a>
 </section>
 
