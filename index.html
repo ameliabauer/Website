@@ -241,6 +241,19 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
 @media (max-width:520px) { .portfolio-footer { min-height:100px; } .amz-stamps { width:140px; flex-basis:140px; } }
 @media (prefers-reduced-motion:reduce) { .amz-stamps .stamp { opacity:.92; transform:none; animation:none!important; } .amz-stamps.play svg { animation:none; } }
 
+
+/* Live Betty Mae product link */
+.live-product-link{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:28px 0 12px;padding:24px 28px;border:1px solid rgba(93,99,201,.2);border-radius:18px;background:linear-gradient(115deg,rgba(141,182,234,.12),rgba(196,135,212,.10));color:inherit;text-decoration:none;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.live-product-link:hover{transform:translateY(-3px);border-color:rgba(93,99,201,.48);box-shadow:0 12px 28px rgba(45,52,100,.08)}
+.live-product-copy{display:grid;gap:7px}
+.live-product-kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#5d63c9}
+.live-product-title{margin:0;font-size:clamp(20px,3vw,26px);font-weight:600;letter-spacing:-.03em}
+.live-product-description{margin:0;color:#686b7c;font-size:14px;line-height:1.6}
+.live-product-arrow{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;font-size:13px;font-weight:600;color:#5d63c9}
+.live-product-arrow svg{width:18px;height:18px;transition:transform .2s ease}
+.live-product-link:hover .live-product-arrow svg{transform:translateX(4px)}
+@media(max-width:560px){.live-product-link{align-items:flex-start;flex-direction:column;padding:21px}.live-product-arrow{margin-top:2px}}
+@media(prefers-reduced-motion:reduce){.live-product-link,.live-product-arrow svg{transition:none}}
 </style></head><body><main>
 <section class="screen entry" id="window-entry" aria-label="Welcome">
 <div class="amz-logo" aria-label="Amelia Zmuda">
@@ -345,6 +358,14 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
     </a>
   </div>
 </section>
+<a class="live-product-link" href="https://yesterdaybybettymae.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Yesterday, by Betty Mae — the live family memory archive">
+  <div class="live-product-copy">
+    <span class="live-product-kicker">Now live · A family memory archive</span>
+    <h3 class="live-product-title">Yesterday, by Betty Mae</h3>
+    <p class="live-product-description">Explore the living product built to bring family photographs and the stories behind them together.</p>
+  </div>
+  <span class="live-product-arrow">Visit the live website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</a>
 <footer class="portfolio-footer">
   <span class="footer-credit">AMELIA ZMUDA · FROM A TO Z</span>
   <div class="amz-stamps" role="img" aria-label="Passport stamps: Arrived Amelia Zmuda, From A to Z">
