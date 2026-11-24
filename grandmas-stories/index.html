@@ -34,127 +34,112 @@ a{color:inherit}.shell{width:min(1080px,calc(100% - 48px));margin:auto}
 .deep-dive>div{padding:15px 0 2px;animation:revealDetails .25s ease both}
 @keyframes revealDetails{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.deep-dive>div{animation:none}.deep-dive summary:after{transition:none}}
+
+/* Compact, recruiter-friendly case-study layout */
+.compact-hero{padding:62px 0 42px}
+.compact-hero h1{font-size:clamp(50px,7vw,76px);margin:14px 0}
+.compact-hero .dek{font-size:clamp(18px,2.2vw,22px);max-width:680px}
+.compact-hero .hero-meta{margin-top:22px}
+.snapshot{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:28px;padding:24px 30px;margin:0 0 58px;background:#ebe7dc;border-radius:4px;min-height:220px}
+.snapshot h2,.compact-section h2,.closing-note h2{font:500 clamp(30px,4vw,43px)/1.12 var(--serif);letter-spacing:-.03em;margin:10px 0 12px}
+.snapshot p:not(.kicker),.compact-section>p:not(.kicker),.closing-note>p:not(.kicker){font-size:14px;line-height:1.75;color:#586568;max-width:680px;margin:0}
+.snapshot-image{height:160px;position:relative;display:flex;align-items:center;justify-content:center}
+.mini-photo{position:absolute;width:104px;height:132px;background:linear-gradient(145deg,#9aada4,#d9c5a7 55%,#806f5c);border:8px solid #faf8f1;border-bottom-width:20px;box-shadow:0 9px 22px #43514a25}
+.mini-photo.one{transform:translate(-48px,5px) rotate(-12deg)}
+.mini-photo.two{transform:translate(0,-5px) rotate(3deg)}
+.mini-photo.three{transform:translate(48px,6px) rotate(12deg)}
+.compact-section{padding:0 0 48px;margin-bottom:42px;border-bottom:1px solid var(--line)}
+.compact-section h2{max-width:700px}
+.section-intro{font:500 18px/1.6 var(--serif)!important;color:#536367!important;max-width:760px!important}
+.compact-quote{font-size:20px;margin:18px 0 12px;padding:14px 20px;max-width:650px}
+.three-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 10px}
+.three-steps>div,.principle-row>div{padding:18px;background:var(--card);border:1px solid var(--line);border-radius:3px}
+.three-steps span{display:block;font-size:10px;letter-spacing:.16em;color:var(--orange);margin-bottom:12px}
+.three-steps strong,.principle-row strong{font:500 18px var(--serif);display:block;margin-bottom:7px}
+.three-steps p,.principle-row p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.principle-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 8px}
+.closing-note{padding:0 0 50px}
+.closing-note>p:not(.kicker){font-size:16px;max-width:700px}
+.compact-outro{padding:42px 0;margin-top:0}
+.deep-dive{margin-top:16px}
+.deep-dive>div{max-width:700px}
+@media(max-width:650px){
+ .compact-hero{padding:48px 0 32px}
+ .snapshot{grid-template-columns:1fr;gap:8px;padding:22px;margin-bottom:42px}
+ .snapshot-image{height:125px}
+ .compact-section{padding-bottom:34px;margin-bottom:32px}
+ .three-steps,.principle-row{grid-template-columns:1fr}
+ .three-steps>div,.principle-row>div{padding:15px}
+ .compact-outro{padding:34px 0}
+}
 </style>
 </head>
 <body>
 <div class="shell">
 <nav class="topbar"><a href="/">← Amelia Zmuda · Portfolio</a><span>Selected project / Family &amp; storytelling</span></nav>
-<header class="hero">
-<p class="eyebrow">A personal project · Product design · End-to-end</p>
+
+<header class="hero compact-hero">
+<p class="eyebrow">Personal project · Product design · End-to-end</p>
 <h1>Grandma’s<br><em>Stories.</em></h1>
-<p class="dek">A living family archive, designed to turn a lifetime of photographs into a lifetime of stories — told in Betty’s own words, and kept close for the generations that follow.</p>
-<div class="hero-meta"><span>Problem discovery</span><span>Experience design</span><span>Visual direction</span><span>Product thinking</span></div>
+<p class="dek">A living family archive that turns photographs into stories — told in Betty’s own words and kept close for generations.</p>
+<div class="hero-meta"><span>Human-centred design</span><span>AI-assisted storytelling</span><span>Family archive</span></div>
 </header>
-<div class="photo-stage" role="img" aria-label="A collection of softly aged family photographs, representing the memories at the heart of the project"><div class="photo-stack"><div class="photo"><div class="photo-art"></div></div><div class="photo"><div class="photo-art"></div></div><div class="photo"><div class="photo-art"></div></div></div></div>
 
-<section class="section overview-section">
-<div class="section-head"><div class="section-num">01 / THE HUMAN PROBLEM</div><div>
-<h2>A century of stories. One better way to keep them.</h2>
-<p class="lead">Betty turned 100 on August 27, 2026. She loves telling stories — I wanted to make it easier to capture, revisit and share them.</p>
-<p>What began as recording our conversations became a bigger idea: a family archive built around the photographs that bring her memories to life.</p>
-<details class="deep-dive"><summary>Explore the problem discovery</summary><div>
-<p>Betty lives at home with full-time caretakers and doesn’t get as many visitors as she deserves. When I visit, she often tells me stories about the people she knew, the places she’s been and the moments that stayed with her. I began recording our conversations on my iPhone because I didn’t want to lose any of it.</p>
-<p>But audio files are easy to collect and surprisingly hard to revisit, organise, connect to the right people or share with family in a meaningful way. I knew there had to be a better way to make those memories accessible — for Betty now, and for all of us later.</p>
-</div></details>
-</div></div></section>
+<section class="snapshot">
+<div class="snapshot-copy">
+<p class="kicker">THE HUMAN PROBLEM</p>
+<h2>A century of stories.<br>A way to keep them.</h2>
+<p>Betty turned 100 on August 27, 2026. She loves telling stories, but recordings on my phone weren’t an easy way for our family to revisit and share them.</p>
+</div>
+<div class="snapshot-image" role="img" aria-label="A small stack of vintage family photographs"><div class="mini-photo one"></div><div class="mini-photo two"></div><div class="mini-photo three"></div></div>
+</section>
 
-<section class="section">
-<div class="section-head"><div class="section-num">02 / THE SPARK</div><div>
+<section class="compact-section">
+<p class="kicker">THE INSIGHT</p>
 <h2>The photographs brought the stories back.</h2>
-<p class="lead">While looking through old family photos for Betty’s 100th birthday, I saw how naturally each image sparked a memory — and a little more of her personality.</p>
-<p>That became the core insight: start with a photograph, not a list of questions.</p>
-<details class="deep-dive"><summary>Explore the moment that changed the brief</summary><div>
-<p>We pulled out a box of old family photographs. I expected a trip down memory lane. What I noticed was how completely the photographs brought her to life. She could tell me who was in each picture, explain the relationships, remember the context and fill in details no caption could ever capture.</p>
-<blockquote class="pullquote">The photograph wasn’t just something to preserve. It was the prompt that brought the story back.</blockquote>
-<p>Rather than asking Betty to sit down and record her life story from beginning to end, the experience could start with something familiar and meaningful. Let one photograph invite one story. Then preserve the two together.</p>
+<p class="section-intro">At Betty’s 100th birthday, we looked through old family photos. Each image sparked a memory — naturally, joyfully, and in her own words.</p>
+<blockquote class="pullquote compact-quote">Start with a photograph, not a list of questions.</blockquote>
+<details class="deep-dive"><summary>Explore the discovery</summary><div>
+<p>We couldn’t get through the boxes of photographs. A black-and-white prom photo, for example, led Betty to describe the black-and-pink dress she wore. The image did what a generic interview prompt couldn’t: it brought a specific moment back to life.</p>
+<p>I realised the photograph wasn’t just something to preserve. It was the prompt that made remembering feel effortless.</p>
 </div></details>
-</div></div></section>
+</section>
 
-<section class="section">
-<div class="section-head"><div class="section-num">03 / THE DESIGN CHALLENGE</div><div>
-<h2>Make remembering feel natural.</h2>
-<p class="lead">How might we make it effortless for Betty to share a memory — and meaningful for family to discover, contribute to and preserve it?</p>
-<div class="insight-grid">
-<div class="insight"><b>Start with a cue</b><span>A photograph gives a conversation somewhere gentle and specific to begin.</span></div>
-<div class="insight"><b>Keep her voice</b><span>The original recording matters as much as the transcript.</span></div>
-<div class="insight"><b>Make it shared</b><span>Family can add recollections without overwriting Betty’s story.</span></div>
-</div>
-<details class="deep-dive"><summary>Explore the design principles</summary><div>
-<p>The experience needed to work for two very different moments: a conversation happening in real time, and a family member exploring those memories years later. It had to feel warm and personal, not like managing a database.</p>
-<p>Betty’s voice and version of events remain the original source. Family additions should enrich a memory, never overwrite it.</p>
-</div></details>
-</div></div></section>
-
-<section class="section">
-<div class="section-head"><div class="section-num">04 / EXPERIENCE DESIGN</div><div>
+<section class="compact-section product-section">
+<p class="kicker">THE PRODUCT IDEA</p>
 <h2>A photo box, reimagined for the family.</h2>
-<p class="lead">The guiding idea: recreate the feeling of sitting in Betty’s living room, opening a box of photographs together and taking them one at a time.</p>
-<div class="process-grid">
-<article class="process-card"><span class="step">01</span><h3>One memory at a time</h3><p>A focused, conversational way to capture a story.</p></article>
-<article class="process-card"><span class="step">02</span><h3>A book, not a dashboard</h3><p>A tactile family album that feels calm and rewarding to explore.</p></article>
-<article class="process-card"><span class="step">03</span><h3>Her voice, preserved</h3><p>Listen to Betty’s original recording, with a transcript alongside it.</p></article>
-<article class="process-card"><span class="step">04</span><h3>Memory is collaborative</h3><p>Relatives can add their own recollections and context.</p></article>
+<div class="three-steps">
+<div><span>01</span><strong>Choose a photo</strong><p>An image gives the conversation a natural place to begin.</p></div>
+<div><span>02</span><strong>Capture her story</strong><p>Keep Betty’s original voice recording alongside the words.</p></div>
+<div><span>03</span><strong>Keep it together</strong><p>Build a shared family album around the memories.</p></div>
 </div>
-<details class="deep-dive"><summary>Explore the experience decisions</summary><div>
-<p>The organising principle is simple: <strong>start with one photograph; preserve an entire lifetime.</strong> A photo becomes the entry point to a memory collection. Betty’s story sits alongside it as her recording and transcript. Related photographs can live together, while each story remains easy to find and revisit.</p>
-<p>The goal is to keep the act of capturing a story focused and conversational, then make browsing feel like opening a treasured family album.</p>
+<details class="deep-dive"><summary>Explore the experience design</summary><div>
+<p>The experience is inspired by sitting in Betty’s living room, opening a box of photographs and taking them one at a time. The capture flow is focused and conversational; the family archive feels like a keepsake book rather than a dashboard.</p>
+<p>Relatives can add their own recollections without overwriting Betty’s original story. Related photographs can sit together, while each memory remains easy to revisit.</p>
 </div></details>
-</div></div></section>
+</section>
 
-<section class="section">
-<div class="section-head"><div class="section-num">05 / VISUAL DIRECTION</div><div>
+<section class="compact-section design-section">
+<p class="kicker">DESIGN &amp; PRODUCT PRINCIPLES</p>
 <h2>Make technology feel like a keepsake.</h2>
-<p class="lead">A quiet, tactile visual language inspired by family albums, aged paper and well-loved objects — not another productivity app.</p>
-<div class="palette"><span class="swatch" style="background:#a8bdc1"></span><span class="swatch" style="background:#6e8d89"></span><span class="swatch" style="background:#e9e1d2"></span><span class="swatch" style="background:#775b49"></span><span class="swatch" style="background:#c77b50"></span></div>
-<div class="swatch-labels"><span>Dusty blue</span><span>Muted teal</span><span>Parchment</span><span>Walnut</span><span>Burnt orange</span></div>
-<details class="deep-dive"><summary>Explore the visual direction</summary><div>
-<p>I deliberately moved away from the visual language of a modern productivity tool. This should feel like something you would keep on a bookshelf, pass around the living room and return to for years.</p>
-<p>The direction draws on familiar materials and family objects: aged paper, soft cloth, walnut, faded photographs and the quiet warmth of a well-loved book. Typography, spacing and motion give the photographs and Betty’s words room to lead.</p>
-</div></details>
-</div></div></section>
-
-<section class="section">
-<div class="section-head"><div class="section-num">06 / INTERACTION DESIGN</div><div>
-<h2>Give digital memories a physical presence.</h2>
-<p class="lead">A digital keepsake book turns browsing into an experience: open the cover, turn the page, discover a photograph and hear Betty tell its story.</p>
-<div class="feature-list">
-<div class="feature"><strong>Open the book</strong><p>A personal cover-opening moment.</p></div>
-<div class="feature"><strong>Turn the page</strong><p>Photographs and stories arranged as spreads.</p></div>
-<div class="feature"><strong>Listen to Betty</strong><p>Her original voice, one tap away.</p></div>
-<div class="feature"><strong>I remember this too</strong><p>Family reflections connected to the story.</p></div>
+<div class="principle-row">
+<div><strong>Tactile by design</strong><p>Mid-century warmth, aged paper, walnut and a quiet family-album aesthetic.</p></div>
+<div><strong>Her voice comes first</strong><p>Original recordings and photographs remain safe, attributable and connected.</p></div>
+<div><strong>Made to be shared</strong><p>A digital keepsake book invites family to browse, listen and contribute.</p></div>
 </div>
-<details class="deep-dive"><summary>Explore the interaction details</summary><div>
-<p>The book uses page depth, soft shadows and tactile page turns to create a sense of occasion around discovering a family story. The interaction is more than decoration: it helps the archive feel like a keepsake rather than a database.</p>
-<p>Collections and timelines help family move through decades without losing the intimacy of one memory. QR codes in printed editions can connect a physical photograph or page to its private digital story.</p>
+<details class="deep-dive"><summary>Explore the visual, interaction and system decisions</summary><div>
+<p>The visual direction draws on familiar materials and objects: soft cloth, walnut, faded photographs and well-loved books. Page turns, layered paper and subtle motion make discovery feel intentional rather than transactional.</p>
+<p>Because these memories are irreplaceable, the product thinking prioritises private family access, clear attribution, reliable media storage and preservation of original photos and audio. Enhancements should never replace the source material.</p>
 </div></details>
-</div></div></section>
+</section>
 
-<section class="section">
-<div class="section-head"><div class="section-num">07 / SYSTEM &amp; TRUST</div><div>
-<h2>Preserve first. Enhance second.</h2>
-<p class="lead">Photographs, recordings and stories are irreplaceable. Protecting the originals is part of the product experience.</p>
-<div class="insight-grid">
-<div class="insight"><b>Keep originals safe</b><span>Never overwrite source photos or audio.</span></div>
-<div class="insight"><b>Make ownership clear</b><span>Connect stories to images and attribute family additions.</span></div>
-<div class="insight"><b>Build for longevity</b><span>Private access, reliable storage and recovery matter.</span></div>
-</div>
-<details class="deep-dive"><summary>Explore the product architecture thinking</summary><div>
-<p>A family archive has a different responsibility from an ordinary app. These are irreplaceable originals: photographs, recordings, names, relationships and the stories attached to them.</p>
-<p>The proposed architecture separates the structured family archive from private media storage, with family roles and permissions, secure access to originals and audio, and independent backups. The goal is to keep the system maintainable as the archive grows, while keeping the first experience beautifully simple.</p>
-</div></details>
-</div></div></section>
-
-<section class="section">
-<div class="section-head"><div class="section-num">08 / WHAT I’M LEARNING</div><div>
+<section class="closing-note">
+<p class="kicker">WHAT I’M LEARNING</p>
 <h2>Start small. Make it last.</h2>
-<p class="lead">The ambition isn’t to capture every memory in one sitting. It’s to make it easier to begin — one photograph, one conversation, one story at a time.</p>
-<blockquote class="pullquote">The real measure won’t be how many photos it stores. It will be how often it brings the family together around a story.</blockquote>
-<details class="deep-dive"><summary>Explore the reflection</summary><div>
-<p>Grandma’s Stories is a reminder that meaningful product design doesn’t always begin with a market gap or a feature list. Sometimes it begins by paying attention: noticing what makes someone light up, understanding the ritual that already works, and designing technology around that human behaviour.</p>
-<p>The goal is to build something future generations can return to and feel close to the person behind it.</p>
-</div></details>
-</div></div></section>
+<p>The ambition isn’t to capture every memory in one sitting. It’s to make it easier to begin — one photograph, one conversation, one story at a time.</p>
+<details class="deep-dive"><summary>Read the reflection</summary><div><p>Meaningful product design doesn’t always begin with a market gap or feature list. Sometimes it begins by paying attention: noticing what makes someone light up, understanding the ritual that already works, and designing technology around that human behaviour.</p></div></details>
+</section>
 </div>
-<footer class="outro"><div class="shell"><p class="eyebrow">A living archive for a life well lived</p><h2>Start with one photograph.<br>Preserve an entire lifetime.</h2><p>Made with love for Betty, and for everyone who has ever wished they had asked one more question.</p></div></footer>
+<footer class="outro compact-outro"><div class="shell"><p class="eyebrow">A living archive for a life well lived</p><h2>One photograph.<br>A lifetime of stories.</h2><p>Made with love for Betty, and for everyone who has ever wished they had asked one more question.</p></div></footer>
 <div class="shell footer"><span>Amelia Zmuda · From A to Z</span><a href="/">Back to portfolio ↑</a></div>
 </body></html>
