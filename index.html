@@ -85,7 +85,7 @@ img { display: block; max-width: 100%; }
 .wm-rest, .az-rest { opacity: 0; transform: translateX(-.25em); display: inline-block; }
 .done .wm-rest, .done .az-rest { animation: restin .8s var(--ease) forwards; }
 @keyframes restin { to { opacity: 1; transform: none; } }
-.az-tag { margin-top: 26px; font-size: 13px; letter-spacing: .42em; color: var(--muted); opacity: 0; }
+.az-tag { position: relative; z-index: 10; display: inline-block; pointer-events: auto; cursor: pointer; margin-top: 26px; font-size: 13px; letter-spacing: .42em; color: var(--muted); opacity: 0; }
 .hero.done .az-tag { animation: up .9s var(--ease) .15s forwards; }
 .lede { margin-top: 44px; max-width: 640px; font-size: clamp(21px, 2.3vw, 30px); line-height: 1.38; color: var(--ink-2); text-wrap: pretty; opacity: 0; animation: up 1s var(--ease) .7s forwards; }
 .hero-meta { margin-top: 56px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; max-width: 980px; border-top: 1px solid var(--line); padding-top: 22px; opacity: 0; animation: up 1s var(--ease) .95s forwards; }
