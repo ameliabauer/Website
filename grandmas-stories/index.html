@@ -1,117 +1,802 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#faf7f2">
-<meta name="description" content="Grandma's Stories — a photo-led family archive designed to preserve stories in the voice of the person who lived them.">
-<title>Grandma’s Stories · Amelia Zmuda</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<style>
-:root{--paper:#faf7f2;--ink:#2a1a12;--muted:#6d5b50;--blue:#6176c5;--line:#d8d0c7;--wood:#2a170d;--serif:"DM Serif Display",Georgia,serif;--italic:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--gutter:clamp(28px,5.6vw,82px);--content:1480px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.62 var(--sans);-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{color:inherit}.shell{width:min(var(--content),calc(100% - 2 * var(--gutter)));margin-inline:auto}
-.hero{padding:clamp(78px,8.5vw,128px) 0 clamp(58px,7vw,96px)}.eyebrow{display:flex;gap:18px;align-items:center;color:var(--blue);font-size:.82rem;font-weight:700;letter-spacing:.08em;margin:0 0 28px}.eyebrow span+span:before{content:"/";color:#d6cec5;margin-right:18px}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(55px,9vw,145px);align-items:end}.hero h1{font:500 clamp(4.7rem,9vw,9.2rem)/.86 var(--serif);letter-spacing:-.055em;margin:0 0 34px}.hero-statement{font:italic clamp(1.6rem,2.6vw,2.45rem)/1.42 var(--italic);max-width:27ch;margin:0}.metadata{border-top:1px solid var(--ink);padding-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:22px 44px;margin-bottom:12px}.metadata dt{font-size:.8rem;color:var(--muted);font-weight:700;margin-bottom:5px}.metadata dd{font-size:1rem;line-height:1.45;margin:0}
-.hero-image{background:var(--wood) url("assets/walnut.webp") center/560px;padding:clamp(36px,6.5vw,94px) var(--gutter);margin:0;overflow:hidden}.hero-image img{width:min(100%,1320px);margin:auto;border:10px solid #17100b;box-shadow:0 16px 50px #0005}.hero-image figcaption{width:min(100%,1320px);margin:14px auto 0;color:#f5e9d9;font:italic .9rem var(--italic)}
-.section{padding:clamp(78px,9vw,132px) 0}.section+.section{border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:clamp(180px,19vw,270px) minmax(0,1fr);gap:30px;margin-bottom:clamp(54px,6vw,88px);align-items:start}.section-index{color:var(--blue);font-size:.82rem;font-weight:700;letter-spacing:.07em;padding-top:12px}.section h2{font:500 clamp(2.35rem,4.2vw,4.3rem)/1.1 var(--serif);letter-spacing:-.025em;max-width:1040px;margin:0}.section h3{font:500 clamp(1.55rem,2vw,2rem)/1.2 var(--serif);margin:0 0 14px}.section p{color:var(--muted);margin:0 0 20px;max-width:70ch;font-size:1.04rem}.section-content{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,7vw,110px);align-items:center}.copy{max-width:650px}.photo-figure{margin:0}.photo-figure img{width:100%;height:auto}.photo-figure figcaption{font-size:.85rem;color:var(--muted);margin-top:12px;line-height:1.6}
-.personas{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:clamp(64px,7vw,100px)}.persona{padding:clamp(24px,3vw,40px);min-height:260px}.persona+.persona{border-left:1px solid var(--line)}.persona-label{font-size:.82rem;color:var(--blue);font-weight:700;letter-spacing:.04em}.persona h3{margin:14px 0 16px}.persona p{font-size:1rem;margin:0}
-.quote{font:italic clamp(1.8rem,3.4vw,3.1rem)/1.3 var(--italic);max-width:900px;margin:clamp(70px,9vw,120px) auto;text-align:center;color:var(--ink)}
-.three-up{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px}.principle{border-top:1px solid var(--ink);padding-top:20px}.principle .num{font:2.4rem var(--serif);color:var(--blue)}.principle h3{margin:12px 0}.principle p{font-size:.98rem}
-.screens{display:grid;grid-template-columns:repeat(2,1fr);gap:34px;margin-top:50px}.screen{margin:0}.screen img{width:100%;background:#21150f;padding:8px;box-shadow:0 14px 34px #2a170d20}.screen figcaption{display:flex;justify-content:space-between;gap:15px;margin-top:13px}.screen strong{font:500 1.25rem var(--serif)}.screen span{font-size:.78rem;color:var(--muted)}
-.design-panel{background:var(--wood) url("assets/walnut.webp") center/560px;color:#f8eee2;padding:clamp(30px,5vw,72px);margin-top:42px}.design-panel h3{font-size:clamp(2rem,3.4vw,3.2rem);max-width:780px}.design-panel p{color:#e4d4c5}.moodboard{display:grid;grid-template-columns:1.15fr 1fr 1fr;grid-template-rows:200px 200px;gap:12px;margin-top:35px}.moodboard img{width:100%;height:100%;object-fit:cover}.moodboard .tall{grid-row:span 2}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:26px}.swatch{height:85px;padding:10px;display:flex;align-items:end;color:#fff;font-size:.75rem;font-weight:700}.swatch.light{color:var(--ink)}
-.mounts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:30px}.mount{padding:14px;background:#eee7de;text-align:center}.mount img{width:100%;height:100px;object-fit:contain}.mount span{font-size:.78rem;color:var(--muted)}
-.materials{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}.material img{width:100%;aspect-ratio:1;object-fit:cover}.material strong{display:block;margin-top:10px;font-size:.92rem}
-.video{position:relative;aspect-ratio:16/9;background:#1b120c;margin-top:44px;overflow:hidden}.video>img{width:100%;height:100%;object-fit:cover;opacity:.58}.video:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(20,10,4,.8))}.play{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:var(--paper);display:grid;place-items:center}.play:after{content:"";border-left:19px solid var(--wood);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}.video-copy{position:absolute;z-index:1;left:clamp(24px,5vw,64px);bottom:clamp(22px,4vw,50px);color:#fff}.video-copy small{color:#e9c47b;text-transform:uppercase;letter-spacing:.12em;font-weight:700}.video-copy h3{font-size:clamp(1.7rem,3vw,2.8rem);margin:8px 0}.video-copy p{color:#f0e4d6;margin:0}
-.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);margin-top:44px}.stack>div{background:var(--paper);padding:24px}.stack small{display:block;color:var(--blue);font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.stack h3{font-size:1.25rem;margin:12px 0}.stack p{font-size:.9rem;margin:0}
-.reflection{background:#eeeaf8;padding:clamp(34px,5vw,70px);margin-top:50px}.reflection h3{font-size:clamp(2rem,3.4vw,3.4rem);max-width:800px}.reflection p{font:italic 1.3rem/1.5 var(--italic);color:var(--ink);max-width:700px}
-.product-link{background:#e8eaf5;padding:clamp(38px,6vw,76px);text-align:center;margin-top:20px}.product-link .eyebrow{justify-content:center;margin-bottom:14px}.product-link h2{font:500 clamp(2.4rem,4vw,4rem) var(--serif);margin:0 0 12px}.product-link p{margin:0 auto 26px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-size:.9rem;font-weight:700;transition:transform .2s,background .2s}.button:hover{transform:translateY(-3px);background:var(--blue)}
-footer{padding:28px var(--gutter) 40px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}footer a{text-decoration:none}
-@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:50px}.metadata{max-width:700px}.section-head{grid-template-columns:1fr;gap:14px}.section-content{grid-template-columns:1fr}.personas{grid-template-columns:1fr}.persona+.persona{border-left:0;border-top:1px solid var(--line)}.three-up{grid-template-columns:1fr}.stack{grid-template-columns:1fr 1fr}.mounts{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.hero{padding-top:58px}.hero h1{font-size:clamp(4.2rem,18vw,6.2rem)}.eyebrow{font-size:.72rem;gap:10px}.eyebrow span+span:before{margin-right:10px}.metadata{gap:18px 20px}.metadata dd{font-size:.9rem}.hero-image{padding:24px 18px}.hero-image img{border-width:5px}.section{padding:68px 0}.section h2{font-size:2.4rem}.section p{font-size:.98rem}.persona{min-height:0}.screens{grid-template-columns:1fr;gap:28px}.moodboard{grid-template-columns:1fr 1fr;grid-template-rows:150px 150px 150px}.moodboard .tall{grid-row:auto}.palette{grid-template-columns:repeat(3,1fr)}.mounts{grid-template-columns:repeat(2,1fr)}.materials{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr 1fr}.video{aspect-ratio:4/3}footer{flex-direction:column}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-</style></head>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grandma's Stories - Case study - Amelia Zmuda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+<style>/* =========================================================
+   Grandma's Stories - textured button kit
+   Drop this file + the /textures folder into your app.
+   Usage: <a class="tx-btn tx-corduroy" href="#">Start <span class="tx-arrow">-></span></a>
+   ========================================================= */
+
+:root {
+  --tx-cream: #F6EBD9;
+  --tx-espresso: #3A2316;
+  --tx-radius-pill: 999px;
+  --tx-radius-soft: clamp(14px, 1.6vw, 22px);
+}
+
+/* ---------- Base button (shape, depth, responsive sizing) ---------- */
+.tx-btn {
+  --tex: none;            /* texture image, set by variant */
+  --tex-size: 220px;      /* physical size of one tile - keeps ribs/weave the same scale on every screen */
+  --tex-repeat: repeat;
+  --tint: transparent;    /* optional colour wash over the texture */
+  --ink: var(--tx-cream); /* label colour */
+  --ink-shadow: 0 2px 3px rgba(0, 0, 0, .45);
+  --edge: rgba(40, 18, 6, .55);
+
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45em;
+  box-sizing: border-box;
+  min-height: clamp(56px, 4.5vw + 36px, 96px);
+  min-width: 0;
+  padding: .4em clamp(1.25em, 3vw, 2em);
+  border: 0;
+  border-radius: var(--tx-radius-pill);
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  text-wrap: balance;
+  font-family: "Young Serif", "Cooper Black", Georgia, serif;
+  font-size: clamp(1.15rem, 1.4vw + .8rem, 2rem);
+  line-height: 1.1;
+  color: var(--ink);
+  text-shadow: var(--ink-shadow);
+  background:
+    linear-gradient(var(--tint), var(--tint)),
+    var(--tex) center / var(--tex-size) var(--tex-repeat);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, .22),   /* top highlight */
+    inset 0 -4px 0 rgba(0, 0, 0, .22),        /* bottom inner edge */
+    inset 0 0 0 1.5px var(--edge),            /* seam outline */
+    0 2px 0 rgba(0, 0, 0, .25),
+    0 10px 22px rgba(40, 18, 6, .45);         /* drop shadow */
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* cushion shading - light from above, rolls off at the bottom */
+.tx-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255, 240, 220, .22), transparent 60%),
+    linear-gradient(to bottom, rgba(255, 255, 255, .06), rgba(0, 0, 0, .28));
+  pointer-events: none;
+}
+
+/* optional stitched seam - add class tx-stitched */
+.tx-stitched::after {
+  content: "";
+  position: absolute;
+  inset: clamp(5px, .6vw, 8px);
+  border: 1.5px dashed rgba(246, 235, 217, .55);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.tx-btn:hover { transform: translateY(-2px); filter: brightness(1.06) saturate(1.05); }
+.tx-btn:active {
+  transform: translateY(1px);
+  filter: brightness(.96);
+  box-shadow:
+    inset 0 3px 6px rgba(0, 0, 0, .3),
+    inset 0 0 0 1.5px var(--edge),
+    0 3px 8px rgba(40, 18, 6, .4);
+}
+.tx-btn:focus-visible { outline: 3px solid #F2C14E; outline-offset: 4px; }
+
+.tx-soft { border-radius: var(--tx-radius-soft); }
+.tx-arrow { font-family: system-ui, sans-serif; font-weight: 600; transition: transform .18s ease; }
+.tx-btn:hover .tx-arrow { transform: translateX(4px); }
+.tx-icon { width: 1.3em; height: 1.3em; flex: none; }
+
+/* ---------- Texture variants ----------
+   image-set serves the 512px tile to standard screens and the 1024px tile to retina. */
+.tx-corduroy {
+  --tex: image-set(url("/grandmas-stories/assets/corduroy-512.webp") 1x, url("/grandmas-stories/assets/corduroy.webp") 2x);
+  --tex-size: 140px;
+  --edge: rgba(90, 30, 8, .7);
+}
+.tx-shag {
+  --tex: image-set(url("/grandmas-stories/assets/shag-512.webp") 1x, url("/grandmas-stories/assets/shag.webp") 2x);
+  --tex-size: 260px;
+  --tint: rgba(60, 25, 8, .28);
+  --ink-shadow: 0 2px 4px rgba(0, 0, 0, .75);
+}
+.tx-walnut {
+  --tex: image-set(url("/grandmas-stories/assets/walnut-512.webp") 1x, url("/grandmas-stories/assets/walnut.webp") 2x);
+  --tex-size: 520px;
+  --tex-repeat: repeat-x;
+  --edge: rgba(20, 8, 2, .75);
+}
+.tx-tweed {
+  --tex: image-set(url("/grandmas-stories/assets/tweed-512.webp") 1x, url("/grandmas-stories/assets/tweed.webp") 2x);
+  --tex-size: 240px;
+  --tint: rgba(30, 30, 10, .12);
+  --ink-shadow: 0 2px 3px rgba(0, 0, 0, .7);
+}
+.tx-floral {
+  --tex: image-set(url("/grandmas-stories/assets/floral-512.webp") 1x, url("/grandmas-stories/assets/floral.webp") 2x);
+  --tex-size: cover;
+  --tex-repeat: no-repeat;
+  --tint: rgba(246, 235, 217, .35);
+  --ink: var(--tx-espresso);
+  --ink-shadow: 0 1px 0 rgba(255, 248, 235, .9), 0 0 12px rgba(255, 248, 235, .9);
+  --edge: rgba(120, 60, 20, .5);
+}
+.tx-leather {
+  --tex: image-set(url("/grandmas-stories/assets/leather-512.webp") 1x, url("/grandmas-stories/assets/leather.webp") 2x);
+  --tex-size: 360px;
+  --edge: rgba(60, 25, 8, .75);
+}
+.tx-knit {
+  --tex: image-set(url("/grandmas-stories/assets/knit-512.webp") 1x, url("/grandmas-stories/assets/knit.webp") 2x);
+  --tex-size: 240px;
+  --ink: var(--tx-espresso);
+  --ink-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+  --edge: rgba(120, 95, 60, .45);
+}
+.tx-linen {
+  --tex: image-set(url("/grandmas-stories/assets/linen-512.webp") 1x, url("/grandmas-stories/assets/linen.webp") 2x);
+  --tex-size: 320px;
+  --ink: var(--tx-espresso);
+  --ink-shadow: 0 1px 0 rgba(255, 255, 255, .55);
+  --edge: rgba(120, 95, 60, .4);
+}
+
+/* ---------- Respect user preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .tx-btn, .tx-arrow { transition: none; }
+  .tx-btn:hover { transform: none; }
+}</style>
+<style>/* Amelia Z portfolio - Grandma's Stories case study */
+:root {
+  --paper: #FBF8F3;
+  --paper-2: #F3EEE6;
+  --ink: #2A1A12;
+  --ink-soft: #5E4C42;
+  --rule: rgba(42, 26, 18, .14);
+  --hydrangea: #5E6FB8;
+  --hydrangea-soft: #DCE1F4;
+  --lilac: #B59BD3;
+  --walnut: #2A170D;
+  --cream: #F6EBD9;
+  --rust: #B5521F;
+  --display: "Young Serif", Georgia, serif;
+  --serif: "Lora", Georgia, serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --wrap: min(1180px, calc(100vw - 2 * clamp(20px, 5vw, 64px)));
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+.wrap { width: var(--wrap); margin-inline: auto; }
+
+/* ---------- Portfolio nav ---------- */
+.site-nav { position: sticky; top: 0; z-index: 20; background: rgba(251, 248, 243, .9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+.site-nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
+.wordmark { display: flex; align-items: baseline; gap: 2px; text-decoration: none; font-family: var(--display); font-size: 1.35rem; }
+.wordmark .z { font-family: "Pinyon Script", cursive; font-size: 2rem; line-height: 0; color: var(--hydrangea); transform: translateY(4px); }
+.site-nav nav { display: flex; gap: 28px; font-size: .95rem; }
+.site-nav nav a { text-decoration: none; color: var(--ink-soft); }
+.site-nav nav a[aria-current] { color: var(--ink); border-bottom: 1.5px solid var(--hydrangea); }
+
+/* ---------- Hero ---------- */
+.hero { padding: clamp(56px, 9vw, 112px) 0 0; }
+.eyebrow { font-size: .8rem; font-weight: 600; letter-spacing: .08em; color: var(--hydrangea); display: flex; gap: 12px; flex-wrap: wrap; }
+.eyebrow span + span::before { content: "/"; margin-right: 12px; color: var(--rule); }
+.hero h1 { font-size: clamp(3rem, 7.5vw, 6.4rem); line-height: .98; margin: 20px 0 24px; }
+.hero .lede { font-family: var(--serif); font-style: italic; font-size: clamp(1.35rem, 1.5vw + .9rem, 1.9rem); line-height: 1.35; max-width: 30ch; color: var(--ink); }
+.hero-top { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px; border-top: 1px solid var(--ink); padding-top: 20px; }
+.facts dt { font-size: .78rem; font-weight: 600; color: var(--ink-soft); letter-spacing: .04em; }
+.facts dd { margin: 2px 0 0; font-size: .98rem; line-height: 1.4; }
+.hero-stage { margin-top: clamp(48px, 7vw, 88px); background: var(--walnut) url("/grandmas-stories/assets/walnut.webp") center / 560px; position: relative; padding: clamp(28px, 6vw, 80px) clamp(20px, 6vw, 96px) 0; overflow: hidden; }
+.hero-stage::before { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 60% at 50% 30%, rgba(255, 190, 120, .2), transparent 70%), linear-gradient(rgba(20, 10, 4, .25), rgba(20, 10, 4, .55)); }
+.hero-stage .device { position: relative; max-width: 980px; margin: 0 auto; }
+.hero-stage { padding-bottom: clamp(28px, 6vw, 80px); }
+.hero-video { position: relative; max-width: 1080px; margin: 0 auto; background: #17100B; padding: 10px; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
+.hero-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #17100B; }
+
+/* ---------- Device frames with live app ---------- */
+.device { background: #17100B; padding: 12px 12px 0; border-radius: 22px 22px 0 0; box-shadow: 0 30px 80px rgba(0, 0, 0, .45); }
+.device.whole { border-radius: 22px; padding: 12px; }
+.screen-frame { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 12px 12px 0 0; background: var(--walnut); }
+.device.whole .screen-frame { border-radius: 12px; }
+.screen-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Sections ---------- */
+section.chapter { padding: clamp(72px, 10vw, 136px) 0; }
+section.chapter + section.chapter { border-top: 1px solid var(--rule); }
+section.tint { background: var(--paper-2); }
+.chapter-head { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; margin-bottom: clamp(36px, 5vw, 64px); }
+.chapter-num { font-size: .8rem; font-weight: 600; letter-spacing: .08em; color: var(--hydrangea); padding-top: 14px; }
+.chapter-head h2 { font-size: clamp(1.6rem, 2.7vw, 2.4rem); line-height: 1.12; max-width: none; }
+.prose { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+.prose > .body { max-width: 66ch; display: grid; gap: 1.1em; }
+.prose > .body p { font-size: 1.08rem; }
+.pull { font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 2vw + .6rem, 2.1rem); line-height: 1.35; color: var(--ink); max-width: 34ch; }
+.skills { display: flex; flex-wrap: wrap; gap: 8px; align-content: start; padding-top: 6px; }
+.skill { font-size: .78rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--hydrangea-soft); color: #33407A; white-space: nowrap; }
+
+/* Problem split */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.split figure { margin: 0; }
+.body a { text-decoration: underline; text-decoration-color: var(--hydrangea); text-underline-offset: 3px; }
+.press-intro { margin-top: clamp(64px, 8vw, 112px); text-align: center; display: grid; gap: 14px; justify-items: center; }
+.press-intro .chapter-num { padding-top: 0; }
+.bonus-press { padding: clamp(56px, 7vw, 96px) 0; background: var(--paper); border-top: 1px dashed var(--rule); }
+.bonus-press .press-intro { margin-top: 0; }
+.bonus-press .press-sub { font-size: clamp(1rem, .5vw + .85rem, 1.15rem); max-width: 52ch; }
+.press-sub { font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, .8vw + .85rem, 1.4rem); line-height: 1.5; max-width: 60ch; color: var(--ink-soft); text-wrap: balance; }
+.press-sub a { text-decoration: underline; text-decoration-color: var(--hydrangea); text-underline-offset: 3px; color: var(--ink); }
+.press { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin: clamp(24px, 3vw, 40px) auto 0; max-width: 420px; align-items: start; }
+.press .cap { font-size: .8em; }
+.clipping { display: grid; gap: 6px; text-decoration: none; transition: transform .25s ease; }
+.clipping:hover { transform: translateY(-4px) rotate(-.4deg); }
+.clipping img { width: 100%; height: auto; }
+.clipping { cursor: pointer; }
+.clipping .cap { text-align: center; }
+.clipping .cap u { text-decoration-color: var(--hydrangea); text-underline-offset: 3px; color: var(--ink); }
+@media (max-width: 900px) { .press { max-width: 360px; } }
+.statement { margin: clamp(56px, 8vw, 112px) 0; padding: clamp(28px, 4vw, 48px) 0; border-top: 1px solid rgba(42, 23, 13, .18); border-bottom: 1px solid rgba(42, 23, 13, .18); }
+.statement p { font-family: var(--serif); font-style: italic; font-size: clamp(1.8rem, 3.6vw, 3.4rem); line-height: 1.22; color: var(--ink); max-width: 28ch; margin: 0 auto; text-align: center; text-wrap: balance; }
+.split figure img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.problem-feature { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; }
+.problem-feature figure { background: #FBF6EC; padding: 14px 14px 18px; box-shadow: 0 18px 40px rgba(42, 23, 13, .18), 0 2px 6px rgba(42, 23, 13, .12); transform: rotate(1.6deg); margin-top: -12px; transition: transform .3s ease; }
+.problem-feature figure:hover { transform: rotate(0deg) translateY(-4px); }
+.problem-feature figure img { aspect-ratio: auto; height: auto; object-fit: contain; }
+.problem-feature figcaption { font-family: var(--serif); font-style: italic; text-align: center; }
+@media (max-width: 900px) { .problem-feature figure { transform: none; margin-top: 0; } }
+.cap { font-size: .85rem; color: var(--ink-soft); margin-top: 10px; }
+.persona-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; margin-top: clamp(40px, 6vw, 72px); background: var(--rule); border: 1px solid var(--rule); }
+.persona { background: var(--paper); padding: 28px; display: grid; gap: 10px; align-content: start; }
+.persona h3 { font-size: 1.35rem; }
+.persona .who { font-size: .8rem; font-weight: 600; color: var(--hydrangea); letter-spacing: .04em; }
+.persona p { color: var(--ink-soft); font-size: .98rem; }
+
+/* Principles */
+.principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px) clamp(32px, 5vw, 80px); }
+.principle { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; border-top: 1px solid var(--ink); padding-top: 22px; }
+.principle .n { font-family: var(--display); font-size: 2rem; line-height: 1; color: var(--hydrangea); }
+.principle h3 { font-size: 1.45rem; margin-bottom: 8px; }
+.principle p { color: var(--ink-soft); }
+.principle .proof { margin-top: 12px; font-size: .88rem; color: var(--ink); }
+.principle .proof b { font-weight: 600; }
+
+/* Mood board */
+.mood { display: grid; grid-template-columns: 1.1fr 1.6fr 1.1fr; grid-template-rows: 260px 260px; gap: 10px; }
+.mood img { width: 100%; height: 100%; object-fit: cover; }
+.mood .tall { grid-row: span 2; }
+.palette { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+.chip { aspect-ratio: 3 / 2; padding: 12px; display: flex; align-items: flex-end; font-size: .75rem; font-weight: 600; color: var(--cream); }
+.chip.light { color: var(--ink); }
+
+/* Material system */
+.materials { background: var(--walnut) url("/grandmas-stories/assets/walnut.webp") center / 560px; position: relative; color: var(--cream); }
+.materials::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(20, 10, 4, .45), rgba(20, 10, 4, .7)); }
+.materials > .wrap { position: relative; }
+.materials .chapter-num { color: #F2C14E; }
+.materials .prose > .body p { color: rgba(246, 235, 217, .86); }
+.materials .skill { background: rgba(246, 235, 217, .14); color: var(--cream); }
+.swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: clamp(40px, 5vw, 64px); }
+.swatch { display: grid; gap: 10px; }
+.swatch .tex { aspect-ratio: 1; background-size: cover; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08), 0 10px 24px rgba(0, 0, 0, .35); }
+.swatch b { font-weight: 600; font-size: .95rem; }
+.swatch span { font-size: .85rem; opacity: .75; line-height: 1.35; }
+.specimen { margin-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.specimen .tx-btn { width: 100%; font-size: 1.3rem; min-height: 64px; white-space: nowrap; }
+/* Direct texture backgrounds: the preview does not resolve url() inside the kit's custom properties */
+.tx-btn.tx-corduroy { background: #A8481C url("/grandmas-stories/assets/corduroy.webp") center / 140px repeat; }
+.tx-btn.tx-leather { background: #6B3A1F url("/grandmas-stories/assets/leather.webp") center / 360px repeat; }
+.tx-btn.tx-linen { background: #DCCFB6 url("/grandmas-stories/assets/linen.webp") center / 320px repeat; }
+.specimen .role { font-size: .85rem; opacity: .8; margin-top: 12px; line-height: 1.4; }
+
+/* Corner iteration */
+.rounds { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.round { display: grid; gap: 10px; align-content: start; }
+.round .img { aspect-ratio: 1; background: #EDE3D3; display: grid; place-items: center; padding: 14px; }
+.round .img img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, .25)); }
+.round .img.flat { color: var(--ink-soft); font-size: .8rem; text-align: center; }
+.round .img.flat i { display: block; width: 62%; aspect-ratio: 1; margin: 0 auto 8px; background: #6B4A33; clip-path: polygon(0 0, 100% 0, 0 100%); }
+.round .label { font-size: .75rem; font-weight: 600; letter-spacing: .04em; color: var(--ink-soft); }
+.round .verdict { font-family: var(--serif); font-style: italic; font-size: .95rem; line-height: 1.35; }
+.round.chosen .img { background: var(--hydrangea-soft); }
+.round.chosen .label { color: var(--hydrangea); }
+
+/* Flow */
+.flow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 48px); }
+.flow figure { margin: 0; display: grid; gap: 16px; }
+.flow .step { font-size: .78rem; font-weight: 600; color: var(--hydrangea); letter-spacing: .06em; }
+.flow h3 { font-size: 1.4rem; }
+.flow figcaption p { color: var(--ink-soft); font-size: .98rem; margin-top: 6px; }
+.try-hint { font-size: .9rem; color: var(--ink-soft); margin-top: 24px; }
+
+/* Conversation */
+.convo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.bubbles { display: grid; gap: 14px; }
+.bubble { max-width: 88%; padding: 16px 20px; font-family: var(--serif); font-size: 1.05rem; line-height: 1.45; }
+.bubble small { display: block; font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .06em; margin-bottom: 4px; opacity: .7; }
+.bubble.ai { background: var(--hydrangea-soft); color: #26305E; border-radius: 4px 18px 18px 18px; }
+.bubble.gran { background: #F1E1C9; justify-self: end; border-radius: 18px 4px 18px 18px; }
+.bubble.note { background: none; padding: 0; font-family: var(--sans); font-size: .85rem; color: var(--ink-soft); max-width: none; }
+
+/* Build */
+.stack { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; background: var(--rule); border: 1px solid var(--rule); margin-top: clamp(36px, 5vw, 56px); }
+.stack div { background: var(--paper); padding: 26px; display: grid; gap: 8px; align-content: start; }
+.stack h3 { font-size: 1.2rem; }
+.stack p { font-size: .95rem; color: var(--ink-soft); }
+
+/* Film */
+.film { position: relative; display: block; text-decoration: none; color: var(--cream); }
+.film img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.film::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 40%, rgba(20, 10, 4, .75)); }
+.film .play { position: absolute; z-index: 1; left: clamp(20px, 4vw, 48px); bottom: clamp(20px, 4vw, 44px); display: flex; align-items: center; gap: 18px; }
+.film .play i { width: 68px; height: 68px; border-radius: 50%; background: var(--cream); display: grid; place-items: center; }
+.film .play i::before { content: ""; border-left: 18px solid var(--walnut); border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 5px; }
+.film .play b { font-family: var(--display); font-weight: 400; font-size: clamp(1.3rem, 2vw, 1.9rem); display: block; }
+.film .play span { font-size: .9rem; opacity: .85; }
+
+/* Reflection */
+.learnings { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); }
+.learnings div { border-top: 1px solid var(--ink); padding-top: 20px; display: grid; gap: 10px; align-content: start; }
+.learnings h3 { font-size: 1.3rem; }
+.learnings p { color: var(--ink-soft); }
+.learnings-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.next-steps { margin-top: clamp(56px, 7vw, 96px); }
+.next-title { font-size: clamp(1.6rem, 2.4vw, 2.2rem); margin-bottom: clamp(24px, 3vw, 36px); }
+.next-steps .step { font-size: .78rem; font-weight: 600; color: var(--hydrangea); letter-spacing: .06em; }
+.learning-feature { position: relative; background: var(--walnut) url("/grandmas-stories/assets/walnut.webp") center / 560px; color: var(--cream); padding: clamp(36px, 6vw, 80px) clamp(28px, 6vw, 88px); margin-bottom: clamp(40px, 5vw, 64px); box-shadow: 0 24px 60px rgba(40, 18, 6, .3); }
+.learning-feature::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(20, 10, 4, .35), rgba(20, 10, 4, .6)); }
+.learning-feature > * { position: relative; }
+.learning-feature .lf-label { font-size: .8rem; font-weight: 600; letter-spacing: .08em; color: #F2C14E; margin-bottom: 18px; }
+.learning-feature h3 { font-size: clamp(2.2rem, 4.6vw, 4.2rem); line-height: 1.04; margin-bottom: 22px; }
+.learning-feature p:last-child { font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 1.6vw + .7rem, 1.9rem); line-height: 1.4; max-width: 36ch; color: rgba(246, 235, 217, .92); }
+
+
+
+/* Footer */
+.cta { padding: clamp(72px, 10vw, 128px) 0; text-align: center; background: var(--hydrangea-soft); }
+.cta h2 { font-size: clamp(2rem, 4vw, 3.4rem); margin-bottom: 28px; }
+.cta .actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+.btn.solid { background: var(--ink); color: var(--paper); }
+.btn.ghost { border: 1.5px solid var(--ink); }
+.site-foot { padding: 32px 0; font-size: .85rem; color: var(--ink-soft); }
+.site-foot .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .hero-top, .split, .convo { grid-template-columns: 1fr; }
+  .chapter-head, .prose { grid-template-columns: 1fr; gap: 12px; }
+  .chapter-num { padding-top: 0; }
+  .principles, .flow { grid-template-columns: 1fr; }
+  .persona-grid, .stack, .learnings, .learnings-two, .specimen { grid-template-columns: 1fr; }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rounds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mood { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; }
+  .mood .tall { grid-row: span 1; }
+  .palette { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .site-nav nav { gap: 16px; }
+}</style>
+
+
+
+</head>
 <body>
-<main>
-<section class="hero shell">
- <p class="eyebrow"><span>Case study</span><span>Personal product</span><span>2026</span></p>
- <div class="hero-grid">
-  <div><h1>Grandma’s<br>Stories</h1><p class="hero-statement">What if simply picking up a photo and talking about it meant the story would be preserved, in her own voice, forever?</p></div>
-  <dl class="metadata">
-   <div><dt>My role</dt><dd>Product owner, UX and visual designer, front-end developer</dd></div>
-   <div><dt>Team</dt><dd>Solo, with AI as a design and build partner</dd></div>
-   <div><dt>Platform</dt><dd>Responsive web app, tablet first</dd></div>
-   <div><dt>Status</dt><dd>Live prototype and demo video</dd></div>
-  </dl>
- </div>
-</section>
-<figure class="hero-image"><img src="assets/family.jpg" alt="A grandmother sharing a photograph with her family in a wood-panelled living room"><figcaption>A familiar ritual: sitting together, looking at photographs, and letting the stories unfold.</figcaption></figure>
 
-<section class="section shell" id="problem">
- <div class="section-head"><div class="section-index">01 / The problem</div><h2>The best family stories live in one person’s memory, and they are rarely written down.</h2></div>
- <div class="section-content">
-  <div class="copy"><p>Every family has a keeper of its stories: the person who knows who is in the faded beach photo, why the road trip went wrong, and what was really baking that Christmas morning. When those stories are not captured, they are lost for good.</p>
-  <p>Most memory and genealogy products are designed for the people doing the archiving, not the people doing the remembering. They assume confident typing, comfort with menus, passwords and settings, and an appetite for learning new software. For many grandparents, those assumptions end the conversation before it begins.</p></div>
-  <figure class="photo-figure"><img src="assets/bowling.jpg" alt="A vintage black-and-white photograph of five women bowling, mounted against walnut panelling"><figcaption>Five bowlers, one sign and no names on the back: the kind of photograph only Grandma can explain.</figcaption></figure>
- </div>
- <div class="personas">
-  <article class="persona"><span class="persona-label">Primary user</span><h3>The storyteller</h3><p>Needs large, obvious controls, plain language and no sign-up friction. She should never feel she has done something wrong, and she would rather speak than type.</p></article>
-  <article class="persona"><span class="persona-label">Secondary user</span><h3>The family historian</h3><p>Uploads the photos, invites relatives and sets the stage, so that the storyteller only ever has to do one thing: tell.</p></article>
-  <article class="persona"><span class="persona-label">Audience</span><h3>The next generation</h3><p>Betty has seven great-grandchildren, with two more on the way. Many are too young to hear her stories today; this archive keeps them safe, in her own voice, for the day they are ready to listen, and to return to whenever they like.</p></article>
- </div>
-</section>
+<header class="site-nav">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Amelia <span class="z">Z</span></a>
+    <nav aria-label="Portfolio">
+      <a href="#top" aria-current="page">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<section class="section shell" id="insight">
- <div class="section-head"><div class="section-index">02 / The insight</div><h2>The photograph was already doing the hard part.</h2></div>
- <div class="section-content">
-  <div class="copy"><p>For Betty’s 100th birthday on August 27, 2026, we started going through boxes of old family photographs. We barely made it through the boxes. But the photographs sparked memories naturally, without a list of questions or a formal interview.</p><p>A black-and-white prom photo led Betty to describe the black-and-pink dress she wore. That moment changed the brief: instead of asking someone to remember on command, start with something meaningful and let the memory come to them.</p></div>
-  <figure class="photo-figure"><img src="assets/hands.jpg" alt="Betty holding an old photograph in her living room"><figcaption>The photo is a prompt, but the story belongs to the person holding it.</figcaption></figure>
- </div>
- <p class="quote">“Not another app that asks Grandma to do more. A familiar photo box that gives her room to tell.”</p>
- <div class="three-up">
-  <article class="principle"><span class="num">01</span><h3>Start with a photo</h3><p>A familiar image is a more natural invitation than an empty text field or a questionnaire.</p></article>
-  <article class="principle"><span class="num">02</span><h3>Keep her voice</h3><p>The spoken memory matters as much as the written transcript. Both should stay connected to the photograph.</p></article>
-  <article class="principle"><span class="num">03</span><h3>Make it shared</h3><p>Family members can contribute context and their own memories without replacing Betty’s original account.</p></article>
- </div>
-</section>
+<main id="top">
 
-<section class="section shell" id="product">
- <div class="section-head"><div class="section-index">03 / The product</div><h2>Yesterday, by Betty Mae — a family archive built around the way memories happen.</h2></div>
- <div class="section-content"><div class="copy"><p>The experience is intentionally simple. A family member adds photographs to the archive. Betty opens the app on a tablet, chooses to begin, and a photograph becomes the starting point for a natural, voice-led conversation.</p><p>Afterwards, the story lives alongside the image. Family can revisit the written memory, listen to the original recording, and add their own recollections.</p></div><figure class="photo-figure"><img src="assets/album.webp" alt="Yesterday by Betty Mae family photo album interface"><figcaption>The archive keeps photographs and the memories attached to them together.</figcaption></figure></div>
- <div class="screens">
-  <figure class="screen"><img src="assets/home.webp" alt="Yesterday by Betty Mae home screen"><figcaption><strong>A gentle place to begin</strong><span>Home</span></figcaption></figure>
-  <figure class="screen"><img src="assets/welcome.webp" alt="Family setup screen"><figcaption><strong>Set up the family archive</strong><span>Family access</span></figcaption></figure>
-  <figure class="screen"><img src="assets/story.webp" alt="Voice-first storytelling screen"><figcaption><strong>One photo, one conversation</strong><span>Story capture</span></figcaption></figure>
-  <figure class="screen"><img src="assets/view-listen.webp" alt="A saved story with audio playback"><figcaption><strong>Read it. Hear it in her voice.</strong><span>Story archive</span></figcaption></figure>
- </div>
-</section>
+  <!-- ============ HERO ============ -->
+  <section class="hero" data-screen-label="Hero">
+    <div class="wrap hero-top">
+      <div>
+        <p class="eyebrow"><span>Case study</span><span>Personal product</span><span>2026</span></p>
+        <h1>Grandma's Stories</h1>
+        <p class="lede">What if simply picking up a photo and talking about it meant the story would be preserved, in her own voice, forever?</p>
+      </div>
+      <dl class="facts">
+        <div><dt>My role</dt><dd>Product owner, UX and visual designer, front-end developer</dd></div>
+        <div><dt>Team</dt><dd>Solo, with AI as a design and build partner</dd></div>
+        <div><dt>Platform</dt><dd>Responsive web app, tablet first</dd></div>
+        <div><dt>Status</dt><dd>Live prototype and demo video</dd></div>
+      </dl>
+    </div>
+    <div class="hero-stage" id="film">
+      <div class="hero-video">
+        <video controls="" playsinline="" preload="metadata" poster="/grandmas-stories/assets/case-study-video-poster.jpg" aria-label="Yesterday by Betty Mae demo video">
+          <source src="/grandmas-stories/assets/demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
 
-<section class="section shell" id="design">
- <div class="section-head"><div class="section-index">04 / Visual design</div><h2>A digital keepsake that feels like it belongs in the family home.</h2></div>
- <p>The visual language takes cues from Betty’s living room and the physical objects around family photographs: walnut panelling, familiar fabrics, album mounts and the warm, slightly imperfect character of things kept for decades.</p>
- <div class="design-panel"><h3>Mid-century warmth, with the feel of a well-loved family album.</h3><p>Texture is used as a quiet cue for familiarity, while the interface stays calm and readable.</p><div class="moodboard"><img class="tall" src="assets/family.jpg" alt="Family gathered around photographs"><img src="assets/corduroy.webp" alt="Corduroy fabric"><img src="assets/walnut.webp" alt="Walnut wood"><img src="assets/shag.webp" alt="Shag rug texture"><img src="assets/linen.webp" alt="Linen fabric"></div>
- <div class="palette"><div class="swatch" style="background:#2a170d">Walnut</div><div class="swatch" style="background:#b5521f">Burnt orange</div><div class="swatch light" style="background:#f6ebd9">Keepsake cream</div><div class="swatch" style="background:#6176c5">Blue</div><div class="swatch light" style="background:#dce1f4">Soft lilac</div></div></div>
- <h3 style="margin-top:70px">Details worth getting right</h3><p>Photo-corner mounts and material treatments were explored to make the album feel tactile and considered, rather than like a generic gallery.</p>
- <div class="mounts"><div class="mount"><img src="assets/aged-fleur.webp" alt="Aged floral photo mount"><span>Aged floral</span></div><div class="mount"><img src="assets/aged-scallop.webp" alt="Scalloped photo mount"><span>Scalloped</span></div><div class="mount"><img src="assets/brass-filigree.webp" alt="Brass filigree photo mount"><span>Brass filigree</span></div><div class="mount"><img src="assets/ornate-gilt.webp" alt="Ornate gilt photo mount"><span>Ornate gilt</span></div><div class="mount"><img src="assets/final.webp" alt="Selected photo mount"><span>Selected direction</span></div></div>
- <div class="materials"><div class="material"><img src="assets/corduroy.webp" alt="Corduroy texture"><strong>Corduroy</strong></div><div class="material"><img src="assets/leather.webp" alt="Leather texture"><strong>Leather</strong></div><div class="material"><img src="assets/linen.webp" alt="Linen texture"><strong>Linen</strong></div><div class="material"><img src="assets/record.webp" alt="Vinyl record"><strong>Vinyl</strong></div></div>
-</section>
+  <!-- ============ ORIGIN ============ -->
+  <section class="chapter tint" data-screen-label="Where it started">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">Where it started</p>
+        <h2>It began on Grandma's living room floor, with a box of photographs and a 100th birthday to plan.</h2>
+      </div>
+      <div class="split problem-feature">
+        <div class="prose" style="grid-template-columns: 1fr;">
+          <div class="body">
+            <p>I was helping to prepare for Grandma Betty's 100th birthday: a neighbourhood-wide porch party at the home she and my grandpa built in the late 1950s, in the same town where I grew up. I needed a photograph for the invitation, so I carried a box of old prints up from her basement, searching for a single portrait of Grandma.</p>
 
-<section class="section shell" id="walkthrough">
- <div class="section-head"><div class="section-index">05 / The walkthrough</div><h2>See the experience come together.</h2></div>
- <p>The product walkthrough video is still being prepared. This space is reserved for the demo and will be replaced when the video is ready.</p>
- <div class="video" aria-label="Product walkthrough video placeholder"><img src="assets/family.jpg" alt=""><span class="play" aria-hidden="true"></span><div class="video-copy"><small>Product walkthrough · Coming soon</small><h3>Yesterday, by Betty Mae</h3><p>Video placeholder — demo will be added here.</p></div></div>
-</section>
+            <p>I never found the photo I was looking for. Instead, the afternoon became a trip down memory lane. Almost none of the photographs had a note on the back, so every one prompted a question: who is this, where was this taken, what happened that day? Each answer led to another story, and I could see how much joy it gave her to be asked. My curiosity was the spark; her delight was the point.</p>
+            <p>I reached for my phone and started a voice memo, but it was clear that would not do her stories justice. A recording on my phone could not connect a story to its photograph, invite the rest of the family in, or keep the conversation going once I had left the room.</p>
+            <p>Today I live in New Zealand, on a temporary international work assignment, a long way from that living room floor. I cannot sit beside her with a box of photos whenever I would like to. So I set out to recreate that afternoon: a way to preserve her stories properly, and to bring her the same joy of being asked, wherever her family happens to be.</p>
+            <p class="pull">"I wanted to capture the stories, and the light in her face as she told them."</p>
+          </div>
+        </div>
+        <figure>
+          <img src="/grandmas-stories/assets/photo-box.jpg" alt="Real family photographs from Grandma's box, from the 1950s to the 1970s, spread across a shag rug">
+          <figcaption class="cap">Photographs from Grandma's box. Almost none had a note on the back.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-<section class="section shell" id="build">
- <div class="section-head"><div class="section-index">06 / The build</div><h2>AI should help the memory surface — never make one up.</h2></div>
- <div class="section-content"><div class="copy"><p>The assistant is designed to support the conversation, not take it over. The selected photograph provides context for gentle prompts and relevant follow-up questions, while the storyteller remains the authority on what happened and who is in the picture.</p><p>The product pairs voice capture with a written transcript, keeping both associated with the original photograph so family members can revisit the story in the format that suits them.</p></div><figure class="photo-figure"><img src="assets/view-listen.webp" alt="Story page with audio playback"><figcaption>The photograph, written memory and original voice belong together.</figcaption></figure></div>
- <div class="stack"><div><small>Experience</small><h3>Responsive web app</h3><p>Tablet-first interaction with large, clear touch targets.</p></div><div><small>Conversation</small><h3>OpenAI Realtime</h3><p>Voice-led interaction with photo context and natural follow-up.</p></div><div><small>Family access</small><h3>Supabase</h3><p>Family archives, invitations and shared access.</p></div><div><small>Product</small><h3>End-to-end</h3><p>Product strategy, UX, visual design, prototyping and front-end build.</p></div></div>
-</section>
+  <!-- ============ 01 PROBLEM ============ -->
+  <section class="chapter" data-screen-label="01 The problem">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">01 / The problem</p>
+        <h2>The best family stories live in one person's memory, and they are rarely written down.</h2>
+      </div>
+      <div class="split">
+        <div class="prose" style="grid-template-columns: 1fr;">
+          <div class="body">
+            <p>Every family has a keeper of its stories: the person who knows who is in the faded beach photo, why the road trip went wrong, and what was really baking that Christmas morning. When those stories are not captured, they are lost for good.</p>
+            <p>Most memory and genealogy products are designed for the people doing the archiving, not the people doing the remembering. They assume confident typing, comfort with menus, passwords and settings, and an appetite for learning new software. For many grandparents, those assumptions end the conversation before it begins.</p>
+          </div>
+        </div>
+        <figure>
+          <img src="/grandmas-stories/assets/bowling.jpg" alt="A creased black-and-white photograph of five women bowlers holding bowling balls behind an Aloma Gardens sign">
+          <figcaption class="cap">Five bowlers, one sign and no names on the back: the kind of photograph only Grandma can explain.</figcaption>
+        </figure>
+      </div>
 
-<section class="section shell" id="reflection">
- <div class="section-head"><div class="section-index">07 / Reflection</div><h2>The best interface may be the one that gets out of the way.</h2></div>
- <div class="reflection"><h3>Start with what people already love doing.</h3><p>The strongest product insight came from a real moment: Betty looking at a photograph and remembering. The opportunity was not to teach her a new behaviour, but to build a thoughtful experience around one that already mattered.</p></div>
- <div class="three-up"><article class="principle"><h3>Design for the human moment</h3><p>Observation revealed a better starting point than a feature brainstorm could.</p></article><article class="principle"><h3>Preserve the source</h3><p>AI can organise and prompt, but should never overwrite the original voice or invent missing context.</p></article><article class="principle"><h3>Build with care</h3><p>When the content is irreplaceable, reliability, privacy and recovery are product design concerns.</p></article></div>
-</section>
-<section class="product-link"><p class="eyebrow">THE PRODUCT IS LIVE</p><h2>Meet Yesterday, by Betty Mae.</h2><p>Explore the working family archive behind this case study.</p><a class="button" href="https://yesterdaybybettymae.com" target="_blank" rel="noopener noreferrer">Explore the live product ↗</a></section>
+      <div class="persona-grid">
+        <div class="persona">
+          <p class="who">Primary user</p>
+          <h3>The storyteller</h3>
+          <p>Needs large, obvious controls, plain language and no sign-up friction. She should never feel she has done something wrong, and she would rather speak than type.</p>
+        </div>
+        <div class="persona">
+          <p class="who">Secondary user</p>
+          <h3>The family historian</h3>
+          <p>Uploads the photos, invites relatives and sets the stage, so that the storyteller only ever has to do one thing: tell.</p>
+        </div>
+        <div class="persona">
+          <p class="who">Audience</p>
+          <h3>The next generation</h3>
+          <p>Betty has seven great-grandchildren, with two more on the way. Many are too young to hear her stories today; this archive keeps them safe, in her own voice, for the day they are ready to listen, and to return to whenever they like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 PRINCIPLES ============ -->
+  <section class="chapter tint" data-screen-label="02 Design principles">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">02 / Design principles</p>
+        <h2>Four principles shaped every screen, interaction and line of copy.</h2>
+      </div>
+      <div class="principles">
+        <div class="principle">
+          <span class="n">1</span>
+          <div>
+            <h3>Familiar before functional</h3>
+            <p>The interface should feel like her living room, not like software. Recognisable materials signal what to touch and lower the anxiety of using something new.</p>
+            <p class="proof"><b>In the product:</b> buttons made from corduroy, leather and linen; walnut panelling; photos held in album corners.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="n">2</span>
+          <div>
+            <h3>One obvious next step</h3>
+            <p>Each screen asks for a single decision, and the most important action is always the largest and warmest object on the page.</p>
+            <p class="proof"><b>In the product:</b> a burnt-orange Start button; a single, oversized "Tap to tell" control; touch targets of 48px and above.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="n">3</span>
+          <div>
+            <h3>Talk, don't type</h3>
+            <p>Speaking is the most natural way to tell a story. Typing remains available, but it is offered quietly rather than expected.</p>
+            <p class="proof"><b>In the product:</b> voice recording with live transcription, gentle prompts for each photo, and a discreet "Prefer to type?" option.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="n">4</span>
+          <div>
+            <h3>Nothing is ever lost</h3>
+            <p>Mistakes must be impossible to make permanently. Reassurance is built into every action that changes something.</p>
+            <p class="proof"><b>In the product:</b> stories save automatically; deletions are confirmed and can be undone; one family member sets up the archive and shares a one-time invitation link, which registers each relative's device, so there is no password to forget.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 DIRECTION ============ -->
+  <section class="chapter" data-screen-label="03 Creative direction">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">03 / Creative direction</p>
+        <h2>Inspired by Grandma Betty's living room.</h2>
+      </div>
+      <div class="prose" style="margin-bottom: clamp(36px, 5vw, 56px);">
+        <div class="skills"><span class="skill">Art direction</span><span class="skill">Mood boarding</span><span class="skill">Colour</span></div>
+        <div class="body">
+          <p>Rather than starting from a generic, accessible-but-clinical template, I started with what surrounded me that afternoon on Grandma's living room floor: the textures and colours of a room that has barely changed since the 1970s. Dark walnut walls, a burnt-orange armchair, the record player, the sunburst clock and the photo album on the coffee table became the visual vocabulary for the product.</p>
+          <p>The aim was emotional accessibility as much as functional accessibility. If the app feels like home, the storyteller relaxes, and relaxed people tell better stories.</p>
+        </div>
+      </div>
+      <div class="mood">
+        <img class="tall" src="/grandmas-stories/assets/case-study-1970s-living-room-with-burnt-orange-armchair-and-croch.webp" alt="1970s living room with burnt-orange armchair and crocheted throw">
+        <img src="/grandmas-stories/assets/record.webp" alt="Walnut record player with vinyl">
+        <img class="tall" src="/grandmas-stories/assets/case-study-sunburst-clock-above-a-teak-sideboard.webp" alt="Sunburst clock above a teak sideboard">
+        <img src="/grandmas-stories/assets/case-study-open-photo-album-on-a-coffee-table.webp" alt="Open photo album on a coffee table">
+      </div>
+      <div class="palette" aria-label="Colour palette">
+        <div class="chip" style="background:#2A170D">Walnut</div>
+        <div class="chip" style="background:#B5521F">Corduroy</div>
+        <div class="chip" style="background:#6B3F24">Saddle leather</div>
+        <div class="chip light" style="background:#F2C14E">Mustard</div>
+        <div class="chip light" style="background:#E9E0CF">Linen</div>
+        <div class="chip light" style="background:#F6EBD9">Cream</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 MATERIAL SYSTEM ============ -->
+  <section class="chapter materials" data-screen-label="04 Material system">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">04 / Material system</p>
+        <h2>A design system built from fabric, not flat colour.</h2>
+      </div>
+      <div class="prose">
+        <div class="skills"><span class="skill">Design systems</span><span class="skill">Texture art</span><span class="skill">CSS</span></div>
+        <div class="body">
+          <p>I developed a library of eight seamless, photo-real textures and a reusable textured button kit. Each material carries meaning: corduroy is reserved for the primary action, leather for secondary choices and linen for utility actions, so the hierarchy can be felt as well as seen.</p>
+          <p>The kit is pure CSS layered over lightweight images, with stitching, soft-press states, focus rings and responsive sizing, so it stays crisp on a tablet and fast on a slow connection.</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div><a class="tx-btn tx-corduroy" href="#flow">Start <span class="tx-arrow" aria-hidden="true">→</span></a><p class="role">Corduroy - the one primary action on any screen</p></div>
+        <div><a class="tx-btn tx-leather tx-soft tx-stitched" href="#flow">Our family album</a><p class="role">Stitched leather - secondary navigation</p></div>
+        <div><a class="tx-btn tx-linen tx-soft" href="#flow">Add a photo</a><p class="role">Linen - utility and supporting actions</p></div>
+      </div>
+      <div class="swatches">
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/corduroy.webp)"></div><b>Corduroy</b><span>Primary actions</span></div>
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/leather.webp)"></div><b>Leather</b><span>Secondary actions</span></div>
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/linen.webp)"></div><b>Linen</b><span>Utility actions and cards</span></div>
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/walnut.webp)"></div><b>Walnut</b><span>The room itself</span></div>
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/shag.webp)"></div><b>Shag rug</b><span>Accent</span></div>
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/tweed.webp)"></div><b>Tweed</b><span>Accent</span></div>
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/floral.webp)"></div><b>Grandma florals</b><span>Accent</span></div>
+        <div class="swatch"><div class="tex" style="background-image:url(/grandmas-stories/assets/knit.webp)"></div><b>Knit</b><span>Accent</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 CRAFT ============ -->
+  <section class="chapter" data-screen-label="05 Sweating the detail">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">05 / Sweating the detail</p>
+        <h2>Six rounds to get one photo corner right.</h2>
+      </div>
+      <div class="prose" style="margin-bottom: clamp(36px, 5vw, 56px);">
+        <div class="skills"><span class="skill">Iteration</span><span class="skill">Design critique</span><span class="skill">AI image direction</span></div>
+        <div class="body">
+          <p>The small paper corners that hold a photo in an album are the detail that makes the story screen feel real. They are also easy to get wrong: too flat and the illusion breaks, too ornate and they compete with the photograph.</p>
+          <p>I treated them as a design problem in their own right, directing AI-generated macro photography through successive rounds of critique until the corners looked genuinely aged and worn, with realistic shadowing. A final adjustment moved them further onto the mat, so they hold the photo without covering it.</p>
+        </div>
+      </div>
+      <div class="rounds">
+        <div class="round"><div class="img flat"><div><i></i>Vector</div></div><p class="label">Round 1</p><p class="verdict">Flat and drawn. It broke the illusion immediately.</p></div>
+        <div class="round"><div class="img"><img src="/grandmas-stories/assets/ornate-gilt.webp" alt="Ornate gilt corner"></div><p class="label">Round 2</p><p class="verdict">Heavy gilt filigree. Far too ornate.</p></div>
+        <div class="round"><div class="img"><img src="/grandmas-stories/assets/brass-filigree.webp" alt="Brass filigree corner"></div><p class="label">Round 3</p><p class="verdict">Still competing with the photograph.</p></div>
+        <div class="round"><div class="img"><img src="/grandmas-stories/assets/aged-scallop.webp" alt="Plain worn scalloped corner"></div><p class="label">Round 4</p><p class="verdict">Aged and worn, but now too plain.</p></div>
+        <div class="round"><div class="img"><img src="/grandmas-stories/assets/case-study-maroon-greek-key-corner.webp" alt="Maroon Greek key corner"></div><p class="label">Round 5</p><p class="verdict">Closer: period-right, with a little more character.</p></div>
+        <div class="round chosen"><div class="img"><img src="/grandmas-stories/assets/final.webp" alt="Chocolate-brown morocco corner with gilt rosette"></div><p class="label">Final</p><p class="verdict">Worn morocco card, beaded gilt edge and a small rosette.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 FLOW ============ -->
+  <section class="chapter tint" id="flow" data-screen-label="06 The experience">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">06 / The experience</p>
+        <h2>From photo to preserved story in three taps.</h2>
+      </div>
+      <div class="flow">
+        <figure>
+          <div class="device whole"><div class="screen-frame"><img src="/grandmas-stories/assets/album.webp" alt="Our family album screen showing six real family photographs"></div></div>
+          <figcaption><p class="step">Step 1</p><h3>Choose a photo</h3><p>The family album shows prints on the page, with a quiet marker for photos that already hold a story. Family members manage the photos; the storyteller simply chooses one.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="device whole"><div class="screen-frame"><img src="/grandmas-stories/assets/story.webp" alt="Tell a story screen"></div></div>
+          <figcaption><p class="step">Step 2</p><h3>Tap to tell</h3><p>A warm prompt opens the conversation, and a single control records her voice while transcribing it live. Large previous and next controls make browsing effortless.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="device whole"><div class="screen-frame"><img src="/grandmas-stories/assets/view-listen.webp" alt="Story page showing the photo, the written story and a Listen to Grandma tell it audio player"></div></div>
+          <figcaption><p class="step">Step 3</p><h3>Treasure it together</h3><p>Each photo becomes a page in a book, holding as many stories as the family wants to add, each dated and kept together. Every story can be read or heard: one tap plays the original recording, so the family can listen to her tell it in her own voice.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="device whole"><div class="screen-frame"><img src="/grandmas-stories/assets/welcome.webp" alt="Yesterday by Betty Mae welcome screen with Create a family and Join a family buttons"></div></div>
+          <figcaption><p class="step">Getting started</p><h3>Two choices, then you're home</h3><p>The welcome screen asks one question: start a family archive, or join the one you've been invited to. One person creates it, then shares a one-time invitation link that registers each relative's device, so no one has an account or password to manage.</p></figcaption>
+        </figure>
+      </div>
+      <p class="try-hint">Every screen shown is the working product, not a mock-up. <a href="https://yesterdaybybettymae.com">Try it yourself</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============ 07 AI ============ -->
+  <section class="chapter" data-screen-label="07 AI that listens">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">07 / AI that listens</p>
+        <h2>The questions her family would ask, if they were sitting beside her.</h2>
+      </div>
+      <div class="convo">
+        <div class="prose" style="grid-template-columns: 1fr;">
+          <div class="body">
+            <p>The richest family stories come from good questions, asked by people who care about the answers. I did not want Grandma to feel interviewed. I wanted her to feel as if she were sitting with her family, a photograph in hand, telling stories to the people she loves. The AI takes the place of me, or any of us, asking the questions we would ask if we were there: who is that, where were you, what happened next?</p>
+            <p>The design challenge was restraint. The AI never interrupts, never corrects and never asks more than one question at a time. It sounds like an interested grandchild, not a form to complete.</p>
+            <div class="skills" style="margin-top: 8px;"><span class="skill">Conversation design</span><span class="skill">Voice UX</span><span class="skill">AI product design</span></div>
+          </div>
+        </div>
+        <div class="bubbles" aria-label="Example conversation">
+          <div class="bubble ai"><small>Grandma's Stories</small>Tell me about this day at the beach...</div>
+          <div class="bubble gran"><small>Grandma</small>That was the summer of 1958. My sister and I took the early train down to the coast with a basket of egg sandwiches.</div>
+          <div class="bubble ai"><small>Grandma's Stories</small>That sounds lovely. Where did you get that swimsuit?</div>
+          <div class="bubble gran"><small>Grandma</small>Oh, I sewed it myself from a remnant I found at the market. I was so proud of it.</div>
+          <p class="bubble note">Illustrative exchange, as shown in the demo video.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 BUILD ============ -->
+  <section class="chapter tint" data-screen-label="08 How I built it">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">08 / How I built it</p>
+        <h2>From concept to live product, designed and engineered end to end.</h2>
+      </div>
+      <div class="prose">
+        <div class="skills"><span class="skill">Front-end engineering</span><span class="skill">Accessibility</span><span class="skill">AI-assisted delivery</span></div>
+        <div class="body">
+          <p>I took the product from idea to deployed web app myself, using AI throughout as a design and engineering partner: generating textures and photography to my direction, accelerating code, and producing the voices for the demo video. The judgement on what was right, and what was not good enough yet, stayed with me.</p>
+          <p>I deliberately kept the stack lightweight, with no framework and no build step, so the app loads quickly on older tablets and is simple to maintain.</p>
+        </div>
+      </div>
+      <div class="stack">
+        <div><h3>Lightweight front end</h3><p>Vanilla HTML, CSS and JavaScript with a small hash router, deployed on Vercel.</p></div>
+        <div><h3>Voice capture</h3><p>Recording through the browser's MediaRecorder, with live speech-to-text transcription where the device supports it, and a typed fallback everywhere.</p></div>
+        <div><h3>Accessibility first</h3><p>Semantic structure, focus management between screens, visible focus rings, screen-reader status announcements and generous touch targets.</p></div>
+        <div><h3>Designed for every device</h3><p>Grandma tells her stories on an iPad, I listen on my laptop, and my sister lives on her iPhone. One responsive layout adapts to each, so the whole family shares the same archive on whatever is in their hands.</p></div>
+        <div><h3>Generated craft assets</h3><p>Seamless fabric textures and album-corner macro photography created with AI image models, then cut out, tuned and optimised for the web.</p></div>
+        <div><h3>A warm, natural voice</h3><p>In the app, the family's follow-up questions are spoken aloud in an OpenAI voice, so the conversation feels like being asked rather than reading a screen. For the demo video, both voices were simulated with an open-source text-to-speech model and mixed over an original 1970s soul track.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ 10 REFLECTION ============ -->
+  <section class="chapter" data-screen-label="09 Reflection">
+    <div class="wrap">
+      <div class="chapter-head">
+        <p class="chapter-num">09 / Reflection</p>
+        <h2>What this project reinforced for me.</h2>
+      </div>
+      <div class="learning-feature">
+        <p class="lf-label">The lesson that matters most</p>
+        <h3>AI raises the bar on taste.</h3>
+        <p>When generation is effectively free, the scarce skill is knowing what good looks like and being willing to send it back until it is right.</p>
+      </div>
+      <div class="learnings learnings-two">
+        <div><h3>Emotion is a usability feature</h3><p>Familiarity did as much to lower the barrier to use as any interaction pattern. Designing for how someone feels is designing for whether they will use it at all.</p></div>
+        <div><h3>Design the whole story</h3><p>Product, interface, content and demo video were designed as one experience, so the value is clear before anyone touches a button.</p></div>
+      </div>
+      <div class="next-steps">
+        <h3 class="next-title">What's next</h3>
+        <div class="learnings">
+          <div><p class="step">01</p><h3>More user testing</h3><p>Watching Betty and other grandparents use the app on their own devices, noting every hesitation, and testing with family members across phone, tablet and laptop.</p></div>
+          <div><p class="step">02</p><h3>More stories told</h3><p>Growing the archive one photograph at a time, so every story has a home in her voice, ready for the great-grandchildren when they are old enough to listen.</p></div>
+          <div><p class="step">03</p><h3>Iterative improvement</h3><p>Using what testing and real conversations reveal to refine the follow-up questions, playback and invitations, release by release.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta" id="contact" data-screen-label="Call to action">
+    <div class="wrap">
+      <h2>Real stories. Lasting memories.</h2>
+      <div class="actions">
+        <a class="btn solid" href="https://yesterdaybybettymae.com">Visit the live app <span aria-hidden="true">→</span></a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BONUS: PRESS ============ -->
+  <section class="bonus-press" data-screen-label="Bonus: in the local papers">
+    <div class="wrap">
+      <div class="press-intro">
+        <p class="chapter-num">P.S. In the local papers</p>
+        <p class="press-sub">Betty's 100th made the news. The <a href="https://www.chicagotribune.com/2026/08/25/hinsdale-centenarian-betty-bauer/" target="_blank" rel="noopener">Hinsdale Doings</a> told the story of the home she and Grandpa built 65 years ago. <a href="https://www.thehinsdalean.com/story/2026/09/03/news/local-centenarian-gets-celeb-treatment/11295.html" target="_blank" rel="noopener">The Hinsdalean</a> covered the day itself, when well-wishers filled her front porch and the village proclaimed 27 August Betty Bauer Day.</p>
+      </div>
+      <div class="press">
+        <a class="clipping" href="https://www.chicagotribune.com/2026/08/25/hinsdale-centenarian-betty-bauer/" target="_blank" rel="noopener">
+          <img src="/grandmas-stories/assets/case-study-newspaper-clipping-from-the-hinsdale-doings-25-august-.webp" alt="Newspaper clipping from the Hinsdale Doings, 25 August 2026: Hinsdale's newest centenarian looks back on a very nice community in which to build a life, with a photo of Betty Bauer in a birthday crown and sash">
+          <span class="cap">Hinsdale Doings (Pioneer Press), 25 August 2026. <u>Read the full article ↗</u></span>
+        </a>
+        <a class="clipping" href="https://www.thehinsdalean.com/story/2026/09/03/news/local-centenarian-gets-celeb-treatment/11295.html" target="_blank" rel="noopener">
+          <img src="/grandmas-stories/assets/case-study-newspaper-clipping-from-the-hinsdalean-3-september-202.webp" alt="Newspaper clipping from The Hinsdalean, 3 September 2026: Local centenarian gets celeb treatment">
+          <span class="cap">The Hinsdalean, 3 September 2026. <u>Read the full article ↗</u></span>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><span>Amelia Zmuda · From A to Z</span><a href="/">← Back to portfolio</a><span>Made with love for Betty.</span></footer>
+
+<footer class="site-foot" id="about">
+  <div class="wrap"><span>Amelia Zmuda - Product, UX and AI</span><span>Designed and built by Amelia</span></div>
+</footer>
+
+
+
+<script type="module">// <stdin>
+(function() {
+  "use strict";
+  document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+    a.setAttribute("target", "_blank");
+    a.setAttribute("rel", "noopener");
+    a.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.open(a.href, "_blank", "noopener");
+    });
+  });
+})();
+</script>
+
+
+
 </body></html>
