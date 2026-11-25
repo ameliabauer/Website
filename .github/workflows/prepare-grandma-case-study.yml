@@ -1,0 +1,108 @@
+name: Prepare uploaded Grandma case study
+on:
+  push:
+    paths:
+      - .github/workflows/prepare-grandma-case-study.yml
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract and optimize the exact uploaded HTML
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, base64, hashlib, mimetypes
+          source = Path("Grandma's Stories - Case study - Amelia Zmuda (1).html")
+          if not source.exists():
+              raise SystemExit("Uploaded source HTML was not found")
+          s = source.read_text(errors="replace")
+          assets = Path("grandmas-stories/assets")
+          assets.mkdir(parents=True, exist_ok=True)
+          known = {hashlib.sha256(p.read_bytes()).hexdigest(): p.name
+                   for p in assets.iterdir() if p.is_file()}
+          # Remove export-only storage/AI shims and the oversized asset-map shim.
+          s = re.sub(r'<script\b[^>]*data-artefact-[^>]*>.*?</script>', '',
+                     s, flags=re.I|re.S)
+          for m in reversed(list(re.finditer(r'<script\b([^>]*)>(.*?)</script>', s, re.I|re.S))):
+              if len(m.group(2)) > 1_000_000:
+                  s = s[:m.start()] + s[m.end():]
+          # Remove unrelated injected PwC fonts; the case study uses its own font stack.
+          styles = list(re.finditer(r'<style\b[^>]*>.*?</style>', s, re.I|re.S))
+          if len(styles) >= 3:
+              m = styles[2]
+              s = s[:m.start()] + s[m.end():]
+          def image_tag(match):
+              tag = match.group()
+              m = re.search(r'src="data:([^,]+);base64,([A-Za-z0-9+/=]+)"', tag)
+              if not m:
+                  return tag
+              data = base64.b64decode(m.group(2))
+              digest = hashlib.sha256(data).hexdigest()
+              name = known.get(digest)
+              if not name:
+                  alt = re.search(r'alt="([^"]*)"', tag)
+                  slug = re.sub(r'[^a-z0-9]+', '-', (alt.group(1) if alt else 'image').lower()).strip('-')[:54]
+                  ext = mimetypes.guess_extension(m.group(1).split(';')[0]) or '.bin'
+                  name = f"case-study-{slug}{ext}"
+                  (assets / name).write_bytes(data)
+                  known[digest] = name
+              return tag.replace(m.group(0), f'src="/grandmas-stories/assets/{name}"')
+          s = re.sub(r'<img\b[^>]*>', image_tag, s, flags=re.I|re.S)
+          video_match = re.search(r'<video\b.*?</video>', s, flags=re.I|re.S)
+          if not video_match:
+              raise SystemExit("The uploaded case study has no demo video element")
+          video = video_match.group()
+          for attr, name in [('poster', 'case-study-video-poster.jpg'), ('src', 'demo.mp4')]:
+              m = re.search(rf'{attr}="data:[^,]+;base64,([A-Za-z0-9+/=]+)"', video)
+              if m:
+                  (assets / name).write_bytes(base64.b64decode(m.group(1)))
+                  video = video.replace(m.group(0), f'{attr}="/grandmas-stories/assets/{name}"')
+          s = s[:video_match.start()] + video + s[video_match.end():]
+          textures = {
+              'app/textures/corduroy.webp':'corduroy.webp',
+              'app/textures/leather.webp':'leather.webp',
+              'app/textures/linen.webp':'linen.webp',
+              'app/textures/walnut.webp':'walnut.webp',
+              'textures/corduroy-512.webp':'corduroy.webp',
+              'textures/corduroy.webp':'corduroy.webp',
+              'textures/floral-512.webp':'aged-fleur.webp',
+              'textures/floral.webp':'aged-fleur.webp',
+              'textures/knit-512.webp':'corduroy.webp',
+              'textures/knit.webp':'corduroy.webp',
+              'textures/leather-512.webp':'leather.webp',
+              'textures/leather.webp':'leather.webp',
+              'textures/linen-512.webp':'linen.webp',
+              'textures/linen.webp':'linen.webp',
+              'textures/shag-512.webp':'shag.webp',
+              'textures/shag.webp':'shag.webp',
+              'textures/tweed-512.webp':'linen.webp',
+              'textures/tweed.webp':'linen.webp',
+              'textures/walnut-512.webp':'walnut.webp',
+              'textures/walnut.webp':'walnut.webp',
+          }
+          for old, name in sorted(textures.items(), key=lambda item: -len(item[0])):
+              s = s.replace(old, f'/grandmas-stories/assets/{name}')
+          s = s.replace('https://grandmas-stories.vercel.app/', 'https://yesterdaybybettymae.com')
+          Path("grandmas-stories/index.html").write_text(s)
+          ignore = Path(".vercelignore")
+          lines = ignore.read_text().splitlines() if ignore.exists() else []
+          for item in ["Grandma's Stories - Case study - Amelia Zmuda (1).html",
+                       "Yesterday by Betty Mae - demo video.mov"]:
+              if item not in lines:
+                  lines.append(item)
+          ignore.write_text("\n".join(lines) + "\n")
+          print("Prepared case study:", len(s), "HTML characters")
+          print("Extracted demo video:", (assets / "demo.mp4").stat().st_size, "bytes")
+          print("Remaining base64 media:", len(re.findall(r'data:[^,]*?;base64,', s)))
+          PY
+      - name: Commit processed case study
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .github/workflows/prepare-grandma-case-study.yml
+          git add -A grandmas-stories .vercelignore .github/workflows/prepare-grandma-case-study.yml
+          git commit -m "Restore Grandma case study from uploaded source"
+          git push
