@@ -2,7 +2,7 @@ name: Restore exact case-study textures
 on:
   push:
     paths:
-      - .github/workflows/prepare-case-study-textures.yml
+      - .github/workflows/prepare-grandma-case-study-textures.yml
 permissions:
   contents: write
 jobs:
