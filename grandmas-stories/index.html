@@ -2,160 +2,163 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4f0e8">
-<meta name="description" content="The story and end-to-end design process behind Grandma’s Stories: a living family archive for photographs, memories and Betty’s voice.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fbf8f3">
+<meta name="description" content="How Amelia Zmuda designed Yesterday, by Betty Mae: a photo-led family archive for preserving stories in the voices of the people who lived them.">
 <title>Grandma’s Stories · Amelia Zmuda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Young+Serif&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
-:root{--ink:#283238;--muted:#687477;--paper:#f4f0e8;--card:#fbf9f4;--blue:#a8bdc1;--teal:#6e8d89;--walnut:#775b49;--orange:#c77b50;--line:#ded8cc;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-a{color:inherit}.shell{width:min(1080px,calc(100% - 48px));margin:auto}
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.topbar a{text-decoration:none}.topbar a:hover{color:var(--orange)}
-.hero{padding:100px 0 88px;max-width:850px}.eyebrow,.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600}.hero h1{font:500 clamp(54px,9vw,100px)/.98 var(--serif);letter-spacing:-.055em;margin:22px 0 24px;max-width:800px}.hero .dek{font:500 clamp(19px,2.7vw,26px)/1.5 var(--serif);color:#536367;max-width:720px;margin:0}.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:42px;color:var(--muted);font-size:11px}.hero-meta span{border-left:1px solid var(--line);padding-left:12px}
-.photo-stage{min-height:340px;background:linear-gradient(135deg,#d8dfd8,#b8c8c5 52%,#e4d4bf);border-radius:5px;position:relative;overflow:hidden;display:grid;place-items:center;margin-bottom:100px}.photo-stage:before,.photo-stage:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.55);border-radius:50%;width:360px;height:360px}.photo-stage:after{width:500px;height:500px}.photo-stack{position:relative;z-index:1;display:flex;gap:14px;transform:rotate(-4deg)}.photo{width:170px;height:220px;padding:10px 10px 30px;background:#faf8f1;box-shadow:0 16px 35px #43514a33}.photo:nth-child(2){transform:translateY(24px) rotate(8deg)}.photo:nth-child(3){transform:translateY(-9px) rotate(3deg)}.photo-art{height:100%;background:linear-gradient(145deg,#9aada4,#d9c5a7 55%,#806f5c);position:relative;overflow:hidden}.photo-art:before{content:"";position:absolute;width:74px;height:74px;border-radius:50%;background:#d7b69b;left:48px;top:32px;box-shadow:0 0 0 7px #6e8177}.photo-art:after{content:"";position:absolute;width:130px;height:100px;border-radius:55% 55% 0 0;background:#6e7f75;bottom:-28px;left:20px}.photo:nth-child(2) .photo-art{background:linear-gradient(150deg,#b9c4bc,#d4bda2 58%,#7f7664)}.photo:nth-child(3) .photo-art{background:linear-gradient(150deg,#b3c1bf,#e1cdb4 60%,#8c7564)}
-.section{padding:0 0 92px}.section-head{display:grid;grid-template-columns:150px 1fr;gap:30px;margin-bottom:28px}.section-num{font-size:11px;letter-spacing:.16em;color:var(--orange);padding-top:12px}.section h2{font:500 clamp(34px,5vw,54px)/1.1 var(--serif);letter-spacing:-.035em;margin:0 0 18px}.section h3{font:500 24px/1.2 var(--serif);margin:30px 0 10px}.section p{font-size:14px;line-height:1.85;color:#586568;margin:0 0 16px;max-width:740px}.lead{font:500 20px/1.6 var(--serif)!important;color:#425257!important}.pullquote{margin:30px 0;padding:26px 30px;border-left:2px solid var(--orange);background:#ebe7dc;font:italic 23px/1.5 var(--serif);color:#536367;max-width:760px}
-.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}.insight{background:var(--card);border:1px solid var(--line);padding:22px;min-height:150px}.insight b{display:block;font:500 20px var(--serif);margin-bottom:9px}.insight span{font-size:12px;line-height:1.7;color:var(--muted)}
-.process-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}.process-card{background:var(--card);border:1px solid var(--line);padding:25px;min-height:190px}.process-card .step{font-size:10px;letter-spacing:.18em;color:var(--orange);text-transform:uppercase}.process-card h3{margin:13px 0 9px}.process-card p{font-size:12px;margin:0}
-.palette{display:flex;gap:0;overflow:hidden;border-radius:4px;margin:24px 0 10px}.swatch{height:86px;flex:1}.swatch-labels{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:10px}
-.feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:28px 0}.feature{padding:20px;background:#ebe7dc;border-radius:3px}.feature strong{display:block;font:500 18px var(--serif);margin-bottom:7px}.feature p{font-size:12px;margin:0}
-.principle{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;padding:30px;background:#e5e8df;border-radius:4px;margin-top:28px}.principle h3{margin:0;font-size:28px}.principle p{margin:0;font-size:13px}
-.outro{background:#e7e1d5;padding:62px 0;margin-top:10px}.outro h2{font:500 clamp(36px,5vw,56px)/1.1 var(--serif);margin:0 0 15px}.outro p{font-size:14px;line-height:1.8;color:#586568;max-width:720px}.footer{display:flex;justify-content:space-between;padding:26px 0 40px;color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.footer a{text-decoration:none}
-@media(max-width:650px){.shell{width:min(100% - 34px,1080px)}.hero{padding:70px 0 62px}.photo-stage{min-height:260px;margin-bottom:72px}.photo{width:112px;height:160px;padding:7px 7px 22px}.photo-art:before{width:52px;height:52px;left:29px;top:23px}.photo-art:after{width:95px;height:80px;left:8px}.section{padding-bottom:68px}.section-head{grid-template-columns:1fr;gap:8px}.section-num{padding:0}.insight-grid{grid-template-columns:1fr}.process-grid,.feature-list,.principle{grid-template-columns:1fr}.footer{gap:18px;flex-wrap:wrap}.hero-meta{gap:14px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Scannable case-study summaries with optional process deep dives */
-.deep-dive{margin:22px 0 4px;border-top:1px solid var(--line);padding-top:14px;max-width:740px}
-.deep-dive summary{list-style:none;display:inline-flex;align-items:center;gap:10px;cursor:pointer;color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.035em;padding:5px 0;transition:color .2s ease}
-.deep-dive summary::-webkit-details-marker{display:none}
-.deep-dive summary:after{content:'＋';font-size:15px;font-weight:400;transition:transform .2s ease}
-.deep-dive[open] summary:after{content:'−'}
-.deep-dive summary:hover{color:var(--orange)}
-.deep-dive>div{padding:15px 0 2px;animation:revealDetails .25s ease both}
-@keyframes revealDetails{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
-@media(prefers-reduced-motion:reduce){.deep-dive>div{animation:none}.deep-dive summary:after{transition:none}}
-
-/* Compact, recruiter-friendly case-study layout */
-.compact-hero{padding:62px 0 42px}
-.compact-hero h1{font-size:clamp(50px,7vw,76px);margin:14px 0}
-.compact-hero .dek{font-size:clamp(18px,2.2vw,22px);max-width:680px}
-.compact-hero .hero-meta{margin-top:22px}
-.snapshot{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:28px;padding:24px 30px;margin:0 0 58px;background:#ebe7dc;border-radius:4px;min-height:220px}
-.snapshot h2,.compact-section h2,.closing-note h2{font:500 clamp(30px,4vw,43px)/1.12 var(--serif);letter-spacing:-.03em;margin:10px 0 12px}
-.snapshot p:not(.kicker),.compact-section>p:not(.kicker),.closing-note>p:not(.kicker){font-size:14px;line-height:1.75;color:#586568;max-width:680px;margin:0}
-.snapshot-image{height:160px;position:relative;display:flex;align-items:center;justify-content:center}
-.mini-photo{position:absolute;width:104px;height:132px;background:linear-gradient(145deg,#9aada4,#d9c5a7 55%,#806f5c);border:8px solid #faf8f1;border-bottom-width:20px;box-shadow:0 9px 22px #43514a25}
-.mini-photo.one{transform:translate(-48px,5px) rotate(-12deg)}
-.mini-photo.two{transform:translate(0,-5px) rotate(3deg)}
-.mini-photo.three{transform:translate(48px,6px) rotate(12deg)}
-.compact-section{padding:0 0 48px;margin-bottom:42px;border-bottom:1px solid var(--line)}
-.compact-section h2{max-width:700px}
-.section-intro{font:500 18px/1.6 var(--serif)!important;color:#536367!important;max-width:760px!important}
-.compact-quote{font-size:20px;margin:18px 0 12px;padding:14px 20px;max-width:650px}
-.three-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 10px}
-.three-steps>div,.principle-row>div{padding:18px;background:var(--card);border:1px solid var(--line);border-radius:3px}
-.three-steps span{display:block;font-size:10px;letter-spacing:.16em;color:var(--orange);margin-bottom:12px}
-.three-steps strong,.principle-row strong{font:500 18px var(--serif);display:block;margin-bottom:7px}
-.three-steps p,.principle-row p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
-.principle-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 8px}
-.closing-note{padding:0 0 50px}
-.closing-note>p:not(.kicker){font-size:16px;max-width:700px}
-.compact-outro{padding:42px 0;margin-top:0}
-.deep-dive{margin-top:16px}
-.deep-dive>div{max-width:700px}
-@media(max-width:650px){
- .compact-hero{padding:48px 0 32px}
- .snapshot{grid-template-columns:1fr;gap:8px;padding:22px;margin-bottom:42px}
- .snapshot-image{height:125px}
- .compact-section{padding-bottom:34px;margin-bottom:32px}
- .three-steps,.principle-row{grid-template-columns:1fr}
- .three-steps>div,.principle-row>div{padding:15px}
- .compact-outro{padding:34px 0}
-}
-.live-product-cta{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:25px 28px;margin:-12px 0 52px;background:#e5e8df;border:1px solid #d4d9ce;border-radius:5px}
-.live-product-cta-copy{max-width:620px}.live-product-cta-copy .kicker{margin:0 0 8px}
-.live-product-cta h2{font:500 clamp(25px,3vw,34px)/1.12 var(--serif);letter-spacing:-.025em;margin:0 0 8px}
-.live-product-cta p{font-size:13px;line-height:1.65;color:#586568;margin:0}
-.live-product-button{display:inline-flex;align-items:center;justify-content:center;gap:18px;flex-shrink:0;padding:14px 18px;background:#283238;color:#fff;text-decoration:none;border-radius:3px;font-size:12px;font-weight:700;transition:transform .2s ease,background .2s ease}
-.live-product-button:hover{background:#775b49;transform:translateY(-2px)}
-@media(max-width:650px){.live-product-cta{align-items:flex-start;flex-direction:column;gap:18px;padding:22px;margin:-4px 0 40px}.live-product-button{width:100%}}
+:root{--paper:#fbf8f3;--paper2:#f3eee6;--ink:#2a1a12;--soft:#5e4c42;--rule:rgba(42,26,18,.15);--blue:#5e6fb8;--blue-soft:#dce1f4;--lilac:#b59bd3;--walnut:#2a170d;--cream:#f6ebd9;--rust:#b5521f;--display:"Young Serif",Georgia,serif;--serif:"Lora",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--wrap:min(1180px,calc(100% - 2 * clamp(20px,5vw,64px)))}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{color:inherit}.wrap{width:var(--wrap);margin-inline:auto}
+.site-nav{position:sticky;top:0;z-index:20;background:rgba(251,248,243,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:66px}.wordmark{text-decoration:none;font:1.35rem var(--display);white-space:nowrap}.wordmark .z{font:2rem "Pinyon Script",cursive;color:var(--blue);margin-left:1px}.nav-links{display:flex;gap:clamp(14px,3vw,32px);font-size:.83rem;color:var(--soft)}.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--blue)}
+.hero{padding:clamp(58px,9vw,112px) 0 0}.eyebrow,.kicker{font-size:.75rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue)}.eyebrow{display:flex;gap:12px;flex-wrap:wrap}.eyebrow span+span:before{content:"/";margin-right:12px;color:#b5a99b}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,6vw,78px);align-items:center}.hero h1{font:400 clamp(3.2rem,7.8vw,7.1rem)/.96 var(--display);letter-spacing:-.045em;margin:22px 0 24px;max-width:780px}.hero h1 em{font-family:var(--serif);font-weight:400;color:var(--blue)}.lede{font:italic clamp(1.25rem,1.5vw + .85rem,1.85rem)/1.42 var(--serif);max-width:33ch;color:#514239}.hero-copy>p:not(.eyebrow):not(.lede){max-width:55ch;color:var(--soft);font-size:.98rem;margin-top:20px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;border-top:1px solid var(--ink);padding-top:18px;margin-top:34px}.facts dt{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}.facts dd{margin:3px 0 0;font-size:.9rem;line-height:1.4}
+.hero-art{position:relative;min-height:510px;background:var(--walnut) url("assets/walnut.webp") center/520px;padding:32px;overflow:hidden;box-shadow:0 24px 60px rgba(40,18,6,.22)}.hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(20,10,4,.12),rgba(20,10,4,.48))}.hero-photo{position:absolute;inset:42px 54px 90px 44px;transform:rotate(-2deg);box-shadow:0 18px 40px #0007}.hero-photo img{width:100%;height:100%;object-fit:cover}.hero-screen{position:absolute;right:22px;bottom:24px;width:53%;border:8px solid #21150f;border-radius:9px;box-shadow:0 18px 40px #0008;transform:rotate(3deg)}.hero-screen img{width:100%;height:auto}.hero-caption{position:absolute;left:28px;bottom:22px;color:#f6ebd9;font:italic .95rem var(--serif);z-index:1}
+.product-cta{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 28px;margin:56px 0 0;background:var(--blue-soft);border:1px solid #cbd2ed}.product-cta .kicker{margin:0 0 5px}.product-cta h2{font:400 clamp(1.45rem,2.5vw,2rem)/1.2 var(--display);margin:0 0 5px}.product-cta p{font-size:.9rem;color:var(--soft);margin:0;max-width:650px}.button{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:50px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:.85rem;font-weight:700;white-space:nowrap;transition:transform .2s,background .2s}.button:hover{transform:translateY(-3px);background:var(--blue)}
+.chapter{padding:clamp(76px,10vw,132px) 0}.chapter+.chapter{border-top:1px solid var(--rule)}.tint{background:var(--paper2)}.chapter-head{display:grid;grid-template-columns:190px minmax(0,1fr);gap:34px;margin-bottom:clamp(34px,5vw,62px)}.chapter-num{font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--blue);padding-top:9px}.chapter h2{font:400 clamp(2rem,4.2vw,3.7rem)/1.08 var(--display);letter-spacing:-.025em;max-width:850px}.chapter h3{font:400 clamp(1.25rem,2vw,1.65rem)/1.2 var(--display)}.chapter p{color:var(--soft);max-width:68ch}.chapter-intro{font:italic clamp(1.15rem,1.5vw,1.45rem)/1.5 var(--serif);color:var(--ink)!important;max-width:58ch;margin-top:18px}.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,76px);align-items:center}.split figure{margin:0}.split figure img{width:100%;height:auto;box-shadow:0 18px 44px rgba(42,23,13,.14)}figcaption,.caption{font:italic .88rem var(--serif);color:var(--soft);margin-top:12px}.body-copy{display:grid;gap:16px}.body-copy p{margin:0}.pullquote{padding:28px 0;margin:28px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);font:italic clamp(1.55rem,3vw,2.45rem)/1.3 var(--serif);max-width:780px;text-align:center;margin-inline:auto;color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:42px}.card{background:var(--paper);padding:26px;display:grid;gap:9px;align-content:start}.card .number{font:2rem var(--display);color:var(--blue)}.card h3{font-size:1.35rem}.card p{font-size:.92rem;margin:0}
+.photo-strip{display:grid;grid-template-columns:1.25fr .85fr .85fr;gap:12px;align-items:stretch;margin-top:40px}.photo-strip img{width:100%;height:100%;object-fit:cover;min-height:230px}.photo-strip .photo-tall{grid-row:span 2}.photo-strip .photo-tall img{height:100%}
+.statement{margin:clamp(56px,8vw,104px) 0;padding:clamp(28px,4vw,46px) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}.statement p{font:italic clamp(1.8rem,3.8vw,3.3rem)/1.22 var(--serif);color:var(--ink);max-width:28ch;margin:auto;text-align:center}
+.screen-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:42px}.screen-card{margin:0}.screen-card img{width:100%;border:9px solid #21150f;border-radius:10px;box-shadow:0 18px 44px rgba(42,23,13,.18)}.screen-card figcaption{display:flex;justify-content:space-between;gap:14px;align-items:baseline}.screen-card figcaption strong{font:400 1.2rem var(--display);color:var(--ink)}.screen-card figcaption span{font: .75rem var(--sans);color:var(--soft)}
+.process-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px}.process-step{border-top:1px solid var(--ink);padding-top:16px}.process-step b{font:2rem var(--display);color:var(--blue)}.process-step h3{margin:12px 0 8px}.process-step p{font-size:.9rem;margin:0}
+.design-board{background:var(--walnut) url("assets/walnut.webp") center/520px;color:var(--cream);padding:clamp(28px,5vw,58px);position:relative;overflow:hidden}.design-board:before{content:"";position:absolute;inset:0;background:linear-gradient(#1a0e08a8,#1a0e08d9)}.design-board>*{position:relative}.design-board .kicker{color:#f2c14e}.design-board h2{color:var(--cream);max-width:750px}.design-board p{color:#ead9c4}.mood-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:190px 190px;gap:10px;margin-top:30px}.mood-grid img{width:100%;height:100%;object-fit:cover}.mood-grid .tall{grid-row:span 2}.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:28px}.swatch{height:82px;padding:10px;display:flex;align-items:flex-end;font-size:.7rem;font-weight:700;color:white;background-size:cover;background-position:center}.swatch.light{color:var(--ink)}
+.mount-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}.mount-card{background:#eee4d5;padding:14px;text-align:center}.mount-card img{height:110px;width:100%;object-fit:contain;filter:drop-shadow(2px 4px 4px #0004)}.mount-card span{display:block;font-size:.76rem;color:var(--soft);margin-top:8px}.mount-card.selected{background:var(--blue-soft);outline:1px solid #b9c3e9}
+.material-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}.material{display:grid;gap:10px}.material img{width:100%;aspect-ratio:1;object-fit:cover;box-shadow:0 10px 25px #0002}.material strong{font-size:.9rem}.material span{font-size:.8rem;color:var(--soft)}
+.video-placeholder{position:relative;aspect-ratio:16/9;background:#1b120c;overflow:hidden;box-shadow:0 22px 55px #2a170d30;margin-top:34px}.video-placeholder>img{width:100%;height:100%;object-fit:cover;opacity:.6}.video-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(22px,5vw,54px);background:linear-gradient(transparent,rgba(20,10,4,.8));color:var(--cream)}.play-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:var(--cream);display:grid;place-items:center}.play-mark:after{content:"";border-left:20px solid var(--walnut);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}.video-overlay small{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#f2c14e;font-weight:700}.video-overlay strong{font:400 clamp(1.5rem,3vw,2.4rem) var(--display);margin-top:6px}.video-overlay span{font-size:.85rem;color:#f1e2d0}
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--rule);border:1px solid var(--rule);margin-top:38px}.stack>div{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}.stack b{font:400 1.2rem var(--display)}.stack p{font-size:.87rem;margin:0}.stack small{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);font-weight:700}
+.learning-feature{background:var(--walnut) url("assets/walnut.webp") center/520px;color:var(--cream);padding:clamp(34px,6vw,76px);position:relative;margin-bottom:52px}.learning-feature:before{content:"";position:absolute;inset:0;background:#1a0e08b8}.learning-feature>*{position:relative}.learning-feature .kicker{color:#f2c14e}.learning-feature h3{font-size:clamp(2rem,4vw,3.6rem);max-width:24ch;margin:10px 0 18px}.learning-feature p{font:italic clamp(1.15rem,1.7vw,1.65rem)/1.5 var(--serif);color:#f0dfca;max-width:48ch}
+.learnings{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.learnings>div{border-top:1px solid var(--ink);padding-top:16px}.learnings h3{margin-bottom:8px}.learnings p{font-size:.92rem;margin:0}
+.cta{padding:clamp(70px,10vw,120px) 0;text-align:center;background:var(--blue-soft)}.cta h2{font:400 clamp(2.3rem,5vw,4.2rem)/1.1 var(--display);margin:14px auto 20px;max-width:850px}.cta p{max-width:620px;margin:0 auto 28px;color:var(--soft)}.cta .button{background:var(--ink)}.footer{padding:28px 0 38px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--soft);font-size:.78rem}.footer a{text-decoration:none}
+@media(max-width:900px){.hero-grid,.split{grid-template-columns:1fr}.hero-art{min-height:420px}.chapter-head{grid-template-columns:1fr;gap:8px}.cards{grid-template-columns:1fr}.process-list{grid-template-columns:repeat(2,1fr)}.stack{grid-template-columns:repeat(2,1fr)}.mount-grid{grid-template-columns:repeat(3,1fr)}.material-row{grid-template-columns:repeat(2,1fr)}.learnings{grid-template-columns:1fr}.nav-links{gap:14px}.hero-grid{gap:38px}}
+@media(max-width:600px){.nav-inner{min-height:58px}.nav-links{font-size:.7rem;gap:10px}.nav-links a:nth-child(3){display:none}.hero{padding-top:48px}.hero h1{font-size:clamp(3rem,16vw,5rem)}.hero-art{min-height:330px;padding:18px}.hero-photo{inset:30px 32px 76px 26px}.hero-screen{width:56%;right:12px;bottom:12px;border-width:5px}.hero-caption{left:16px;bottom:12px;font-size:.75rem}.facts{gap:14px}.product-cta{align-items:flex-start;flex-direction:column;padding:22px;margin-top:34px}.product-cta .button{width:100%}.chapter{padding:68px 0}.photo-strip{grid-template-columns:1fr 1fr}.photo-strip .photo-tall{grid-row:auto;grid-column:span 2}.photo-strip img{min-height:150px}.screen-grid{grid-template-columns:1fr;gap:22px}.process-list{grid-template-columns:1fr 1fr}.mood-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}.mood-grid .tall{grid-row:span 1}.swatches{grid-template-columns:repeat(3,1fr)}.mount-grid{grid-template-columns:repeat(2,1fr)}.material-row{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr 1fr}.video-placeholder{aspect-ratio:4/3}.footer{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<div class="shell">
-<nav class="topbar"><a href="/">← Amelia Zmuda · Portfolio</a><span>Selected project / Family &amp; storytelling</span></nav>
-
-<header class="hero compact-hero">
-<p class="eyebrow">Personal project · Product design · End-to-end</p>
-<h1>Grandma’s<br><em>Stories.</em></h1>
-<p class="dek">A living family archive that turns photographs into stories — told in Betty’s own words and kept close for generations.</p>
-<div class="hero-meta"><span>Human-centred design</span><span>AI-assisted storytelling</span><span>Family archive</span></div>
-</header>
-
-<div class="live-product-cta">
-  <div class="live-product-cta-copy">
-    <span class="kicker">THE PRODUCT IS LIVE</span>
-    <h2>Meet Yesterday, by Betty Mae.</h2>
-    <p>Explore the working family archive — built from this idea, and designed to keep photographs, stories and Betty’s voice together.</p>
+<header class="site-nav"><div class="wrap nav-inner"><a class="wordmark" href="/">Amelia<span class="z">Z</span></a><nav class="nav-links" aria-label="Case study navigation"><a href="#story">The story</a><a href="#experience">The product</a><a href="#design">Design</a><a href="#build">The build</a></nav></div></header>
+<main>
+<section class="hero wrap">
+ <div class="hero-grid">
+  <div class="hero-copy">
+   <p class="eyebrow"><span>Personal project</span><span>Product design</span><span>End-to-end</span></p>
+   <h1>Grandma’s<br><em>Stories.</em></h1>
+   <p class="lede">A century of memories, one photograph at a time.</p>
+   <p>I set out to make it easier for my family to capture, revisit and share the stories behind our photographs — in the voice of the person who lived them.</p>
+   <dl class="facts"><div><dt>Product</dt><dd>Yesterday, by Betty Mae</dd></div><div><dt>My role</dt><dd>Product strategy, UX/UI, prototyping &amp; build</dd></div><div><dt>Focus</dt><dd>Voice-first AI · Family archive</dd></div><div><dt>Format</dt><dd>Responsive web app, designed for iPad</dd></div></dl>
   </div>
-  <a href="https://yesterdaybybettymae.com" target="_blank" rel="noopener noreferrer" class="live-product-button">Explore the live product <span aria-hidden="true">↗</span></a>
-</div>
-
-<section class="snapshot">
-<div class="snapshot-copy">
-<p class="kicker">THE HUMAN PROBLEM</p>
-<h2>A century of stories.<br>A way to keep them.</h2>
-<p>Betty turned 100 on August 27, 2026. She loves telling stories, but recordings on my phone weren’t an easy way for our family to revisit and share them.</p>
-</div>
-<div class="snapshot-image" role="img" aria-label="A small stack of vintage family photographs"><div class="mini-photo one"></div><div class="mini-photo two"></div><div class="mini-photo three"></div></div>
+  <div class="hero-art" aria-label="A family photograph and product screen"><div class="hero-photo"><img src="assets/hands.jpg" alt="An older woman holding a vintage family photograph"></div><div class="hero-screen"><img src="assets/home.webp" alt="Yesterday by Betty Mae home screen"></div><span class="hero-caption">A familiar ritual, reimagined.</span></div>
+ </div>
+ <div class="product-cta"><div><p class="kicker">THE PRODUCT IS LIVE</p><h2>Meet Yesterday, by Betty Mae.</h2><p>Explore the working family archive behind this case study.</p></div><a class="button" href="https://yesterdaybybettymae.com" target="_blank" rel="noopener noreferrer">Explore the live product <span aria-hidden="true">↗</span></a></div>
 </section>
 
-<section class="compact-section">
-<p class="kicker">THE INSIGHT</p>
-<h2>The photographs brought the stories back.</h2>
-<p class="section-intro">At Betty’s 100th birthday, we looked through old family photos. Each image sparked a memory — naturally, joyfully, and in her own words.</p>
-<blockquote class="pullquote compact-quote">Start with a photograph, not a list of questions.</blockquote>
-<details class="deep-dive"><summary>Explore the discovery</summary><div>
-<p>We couldn’t get through the boxes of photographs. A black-and-white prom photo, for example, led Betty to describe the black-and-pink dress she wore. The image did what a generic interview prompt couldn’t: it brought a specific moment back to life.</p>
-<p>I realised the photograph wasn’t just something to preserve. It was the prompt that made remembering feel effortless.</p>
-</div></details>
+<section class="chapter" id="story">
+ <div class="wrap">
+  <div class="chapter-head"><div class="chapter-num">01 / THE HUMAN PROBLEM</div><div><h2>Betty turned 100. Her stories deserved more than a phone recording.</h2><p class="chapter-intro">The starting point wasn’t a feature idea. It was a moment with my grandmother.</p></div></div>
+  <div class="split">
+   <figure><img src="assets/photo-box.jpg" alt="A collection of old family photographs spread out together"><figcaption>The family photo boxes that started the idea.</figcaption></figure>
+   <div class="body-copy">
+    <p>Betty turned 100 on August 27, 2026. She loves to talk and tell stories, but she lives at home with full-time caretakers. I had moved to New Zealand, and I felt the distance — and the fact that she didn’t get as many visitors as she deserved.</p>
+    <p>I had recordings of our conversations on my iPhone, but they were scattered and difficult for the rest of the family to revisit. I wanted a way to make those stories easier to keep, share and return to.</p>
+    <p>For her birthday, we started going through boxes of old photographs. We didn’t get very far through the boxes. But something else happened: the pictures brought the stories back.</p>
+   </div>
+  </div>
+  <div class="statement"><p>The photograph wasn’t just an artifact to preserve. It was the beginning of the conversation.</p></div>
+  <div class="split">
+   <div class="body-copy"><h3>The moment that changed the brief</h3><p>A black-and-white prom photograph led Betty to describe the black-and-pink dress she wore. The image unlocked a specific memory without asking her to search for an answer or work through a list of prompts.</p><p>That became the product insight: start with something familiar and meaningful, then let the person’s own memory lead.</p></div>
+   <figure><img src="assets/real-3.jpg" alt="An old black-and-white family photograph of a woman looking into a mirror"><figcaption>Photographs can hold the smallest details — and bring them back.</figcaption></figure>
+  </div>
+ </div>
 </section>
 
-<section class="compact-section product-section">
-<p class="kicker">THE PRODUCT IDEA</p>
-<h2>A photo box, reimagined for the family.</h2>
-<div class="three-steps">
-<div><span>01</span><strong>Choose a photo</strong><p>An image gives the conversation a natural place to begin.</p></div>
-<div><span>02</span><strong>Capture her story</strong><p>Keep Betty’s original voice recording alongside the words.</p></div>
-<div><span>03</span><strong>Keep it together</strong><p>Build a shared family album around the memories.</p></div>
-</div>
-<details class="deep-dive"><summary>Explore the experience design</summary><div>
-<p>The experience is inspired by sitting in Betty’s living room, opening a box of photographs and taking them one at a time. The capture flow is focused and conversational; the family archive feels like a keepsake book rather than a dashboard.</p>
-<p>Relatives can add their own recollections without overwriting Betty’s original story. Related photographs can sit together, while each memory remains easy to revisit.</p>
-</div></details>
+<section class="chapter tint">
+ <div class="wrap">
+  <div class="chapter-head"><div class="chapter-num">02 / THE OPPORTUNITY</div><div><h2>Design for the ritual that already works.</h2><p class="chapter-intro">The goal was not another digital archive that asks families to do more admin. It was to recreate the feeling of sitting together, opening a box of photographs and seeing where the conversation goes.</p></div></div>
+  <div class="cards">
+   <div class="card"><span class="number">01</span><h3>Begin with a photo</h3><p>Use a tangible memory cue instead of a blank screen, a questionnaire or a generic interview prompt.</p></div>
+   <div class="card"><span class="number">02</span><h3>Keep her voice</h3><p>Capture the spoken story alongside the photograph, so the person and the moment stay connected.</p></div>
+   <div class="card"><span class="number">03</span><h3>Make it a family thing</h3><p>Give relatives a shared place to revisit memories and add their own context without replacing the original story.</p></div>
+  </div>
+  <div class="photo-strip"><div class="photo-tall"><img src="assets/real-1.jpg" alt="A vintage family snapshot of two children"></div><img src="assets/real-2.jpg" alt="A vintage family portrait on a patterned sofa"><img src="assets/real-4.jpg" alt="An older couple standing together"><img src="assets/real-3.jpg" alt="A black-and-white photograph from a family home"></div>
+ </div>
 </section>
 
-<section class="compact-section design-section">
-<p class="kicker">DESIGN &amp; PRODUCT PRINCIPLES</p>
-<h2>Make technology feel like a keepsake.</h2>
-<div class="principle-row">
-<div><strong>Tactile by design</strong><p>Mid-century warmth, aged paper, walnut and a quiet family-album aesthetic.</p></div>
-<div><strong>Her voice comes first</strong><p>Original recordings and photographs remain safe, attributable and connected.</p></div>
-<div><strong>Made to be shared</strong><p>A digital keepsake book invites family to browse, listen and contribute.</p></div>
-</div>
-<details class="deep-dive"><summary>Explore the visual, interaction and system decisions</summary><div>
-<p>The visual direction draws on familiar materials and objects: soft cloth, walnut, faded photographs and well-loved books. Page turns, layered paper and subtle motion make discovery feel intentional rather than transactional.</p>
-<p>Because these memories are irreplaceable, the product thinking prioritises private family access, clear attribution, reliable media storage and preservation of original photos and audio. Enhancements should never replace the source material.</p>
-</div></details>
+<section class="chapter" id="experience">
+ <div class="wrap">
+  <div class="chapter-head"><div class="chapter-num">03 / THE PRODUCT</div><div><h2>Yesterday, by Betty Mae — a photo-led family archive.</h2><p class="chapter-intro">A simple loop: bring in photographs, talk about one at a time, and keep the memory attached to the image.</p></div></div>
+  <div class="screen-grid">
+   <figure class="screen-card"><img src="assets/home.webp" alt="Yesterday by Betty Mae home screen with Start and family album options"><figcaption><strong>A gentle place to begin</strong><span>Home</span></figcaption></figure>
+   <figure class="screen-card"><img src="assets/welcome.webp" alt="Create or join a family archive screen"><figcaption><strong>Make it a family archive</strong><span>Family setup</span></figcaption></figure>
+   <figure class="screen-card"><img src="assets/album.webp" alt="Family album with photographs and story statuses"><figcaption><strong>Photographs stay at the centre</strong><span>Family album</span></figcaption></figure>
+   <figure class="screen-card"><img src="assets/story.webp" alt="Photo-led storytelling screen with a voice recording control"><figcaption><strong>One photograph, one conversation</strong><span>Story capture</span></figcaption></figure>
+   <figure class="screen-card"><img src="assets/view.webp" alt="A saved story displayed alongside its photograph"><figcaption><strong>Read the memory with the photo</strong><span>Story view</span></figcaption></figure>
+   <figure class="screen-card"><img src="assets/view-listen.webp" alt="A saved story with an audio playback control"><figcaption><strong>Listen to her tell it</strong><span>Original audio</span></figcaption></figure>
+  </div>
+  <div class="statement"><p>Not a chatbot that interviews Grandma. A photo box that makes room for her to tell the story.</p></div>
+  <div class="process-list">
+   <div class="process-step"><b>01</b><h3>Gather</h3><p>Family members add photographs to the archive.</p></div>
+   <div class="process-step"><b>02</b><h3>Remember</h3><p>A single image gives the conversation a natural starting point.</p></div>
+   <div class="process-step"><b>03</b><h3>Capture</h3><p>Voice and transcript are kept with the photograph.</p></div>
+   <div class="process-step"><b>04</b><h3>Revisit</h3><p>Family can return to the image, read the story and listen again.</p></div>
+  </div>
+ </div>
 </section>
 
-<section class="closing-note">
-<p class="kicker">WHAT I’M LEARNING</p>
-<h2>Start small. Make it last.</h2>
-<p>The ambition isn’t to capture every memory in one sitting. It’s to make it easier to begin — one photograph, one conversation, one story at a time.</p>
-<details class="deep-dive"><summary>Read the reflection</summary><div><p>Meaningful product design doesn’t always begin with a market gap or feature list. Sometimes it begins by paying attention: noticing what makes someone light up, understanding the ritual that already works, and designing technology around that human behaviour.</p></div></details>
+<section class="chapter tint" id="design">
+ <div class="wrap">
+  <div class="chapter-head"><div class="chapter-num">04 / EXPERIENCE &amp; VISUAL DESIGN</div><div><h2>Make the technology feel like something worth keeping.</h2><p class="chapter-intro">I looked to the physical world of family photographs — albums, wood, fabric, keepsakes and the familiar comfort of Betty’s living room.</p></div></div>
+  <div class="design-board">
+   <p class="kicker">VISUAL DIRECTION</p><h2>Mid-century warmth, with the feel of a well-loved family album.</h2>
+   <div class="mood-grid"><img class="tall" src="assets/photo-box.jpg" alt="Vintage photographs arranged on a textured surface"><img src="assets/corduroy.webp" alt="Corduroy fabric texture"><img src="assets/walnut.webp" alt="Walnut wood texture"><img src="assets/shag.webp" alt="Shag rug texture"><img src="assets/linen.webp" alt="Linen fabric texture"></div>
+   <div class="swatches"><div class="swatch" style="background:#2a170d">Walnut</div><div class="swatch" style="background:#b5521f">Burnt orange</div><div class="swatch light" style="background:#f6ebd9">Keepsake cream</div><div class="swatch" style="background:#5e6fb8">Hydrangea blue</div><div class="swatch light" style="background:#dce1f4">Soft lilac</div></div>
+  </div>
+  <div style="margin-top:64px"><h3>Small details make the album feel personal.</h3><p>Even the photograph corners went through exploration. I tested different vintage mount treatments before settling on a more tactile, ornamental direction that feels like a real keepsake rather than a generic card component.</p>
+   <div class="mount-grid"><div class="mount-card"><img src="assets/aged-fleur.webp" alt="Aged floral photo corner mount"><span>Aged floral</span></div><div class="mount-card"><img src="assets/aged-scallop.webp" alt="Aged scalloped photo corner mount"><span>Scalloped edge</span></div><div class="mount-card"><img src="assets/brass-filigree.webp" alt="Brass filigree photo corner mount"><span>Brass filigree</span></div><div class="mount-card"><img src="assets/ornate-gilt.webp" alt="Ornate gilt photo corner mount"><span>Ornate gilt</span></div><div class="mount-card selected"><img src="assets/final.webp" alt="Selected vintage corner mount"><span>Selected direction</span></div></div>
+  </div>
+  <div style="margin-top:64px"><h3>Materials became part of the interface.</h3><p>Texture is used selectively — as a cue for tactility and familiarity, not as decoration everywhere. The aim is to make the archive feel calm and considered, while keeping photographs and stories easy to read.</p>
+   <div class="material-row"><div class="material"><img src="assets/corduroy.webp" alt="Corduroy material"><strong>Corduroy</strong><span>Soft, familiar, tactile</span></div><div class="material"><img src="assets/leather.webp" alt="Leather material"><strong>Leather</strong><span>Archival, durable, warm</span></div><div class="material"><img src="assets/linen.webp" alt="Linen material"><strong>Linen</strong><span>Quiet, light, readable</span></div><div class="material"><img src="assets/record.webp" alt="Vinyl record detail"><strong>Vinyl</strong><span>A subtle nod to the living room</span></div></div>
+  </div>
+ </div>
 </section>
-</div>
-<footer class="outro compact-outro"><div class="shell"><p class="eyebrow">A living archive for a life well lived</p><h2>One photograph.<br>A lifetime of stories.</h2><p>Made with love for Betty, and for everyone who has ever wished they had asked one more question.</p></div></footer>
-<div class="shell footer"><span>Amelia Zmuda · From A to Z</span><a href="/">Back to portfolio ↑</a></div>
-</body></html>
+
+<section class="chapter">
+ <div class="wrap">
+  <div class="chapter-head"><div class="chapter-num">05 / THE WALKTHROUGH</div><div><h2>From a box of photographs to a living archive.</h2><p class="chapter-intro">A short product walkthrough will live here. The video is still being prepared, so this space is intentionally reserved for it.</p></div></div>
+  <div class="video-placeholder" role="img" aria-label="Placeholder for the upcoming Yesterday by Betty Mae product walkthrough video"><img src="assets/hands.jpg" alt=""><div class="play-mark" aria-hidden="true"></div><div class="video-overlay"><small>Product walkthrough · Coming soon</small><strong>Yesterday, by Betty Mae</strong><span>Video placeholder — the walkthrough will be added here.</span></div></div>
+ </div>
+</section>
+
+<section class="chapter tint" id="build">
+ <div class="wrap">
+  <div class="chapter-head"><div class="chapter-num">06 / THE BUILD</div><div><h2>AI should help the memory surface — not invent it.</h2><p class="chapter-intro">The technology is deliberately in service of the conversation. The original photograph and the person’s own account remain the source of truth.</p></div></div>
+  <div class="split">
+   <div class="body-copy"><h3>A guided, voice-first interaction</h3><p>The photo provides visual context for the conversation. The assistant can offer a gentle starting point and useful follow-ups, but it should not claim to know who is pictured or fill gaps with invented details. Grandma’s recollection leads.</p><p>When a story is captured, the experience is designed to keep the spoken recording and its written transcript connected to the photograph, so relatives can read or listen later.</p></div>
+   <figure><img src="assets/view-listen.webp" alt="A story page showing a photograph, written memory and audio playback"><figcaption>The photo, the written story and the original voice belong together.</figcaption></figure>
+  </div>
+  <div class="stack">
+   <div><small>Experience</small><b>Responsive web app</b><p>Designed around large touch targets and an iPad-first storytelling flow.</p></div>
+   <div><small>Conversation</small><b>OpenAI Realtime</b><p>WebRTC session proxy supports natural, voice-led interaction with the selected photo as context.</p></div>
+   <div><small>Family access</small><b>Supabase</b><p>Anonymous device sessions, family invitations and recovery flows support shared access.</p></div>
+   <div><small>Capture</small><b>Browser storage</b><p>Local recording and transcript capture are associated with the selected photograph.</p></div>
+  </div>
+  <p class="caption">The current prototype prioritises a reliable, intimate capture experience. Durable cloud media synchronisation, backups and broader family-scale hardening remain important next steps.</p>
+ </div>
+</section>
+
+<section class="chapter">
+ <div class="wrap">
+  <div class="chapter-head"><div class="chapter-num">07 / WHAT I LEARNED</div><div><h2>The best interface may be the one that gets out of the way.</h2><p class="chapter-intro">This project brought together product thinking, interaction design and hands-on engineering around a problem that is deeply personal.</p></div></div>
+  <div class="learning-feature"><p class="kicker">THE BIGGEST INSIGHT</p><h3>Start with what people already love doing.</h3><p>Instead of asking a hundred-year-old to learn a new way to remember, I designed around the thing that already made her stories come alive: looking at photographs together.</p></div>
+  <div class="learnings">
+   <div><h3>Design for the human moment</h3><p>The strongest product insight came from observing a real interaction, not brainstorming features. The photo box was already the right interface.</p></div>
+   <div><h3>Preserve the source</h3><p>In a family archive, provenance matters. AI can help organise and prompt, but it should never overwrite the original voice or make up missing context.</p></div>
+   <div><h3>Build with care</h3><p>When the content is irreplaceable, reliability, privacy, recovery and clear ownership are core product features — not technical details to add later.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="cta"><div class="wrap"><p class="kicker">A LIVING ARCHIVE FOR A LIFE WELL LIVED</p><h2>One photograph.<br>A lifetime of stories.</h2><p>Yesterday, by Betty Mae is a work in progress, built with love for Betty — and for every family that wants to keep the stories behind its photographs.</p><a class="button" href="https://yesterdaybybettymae.com" target="_blank" rel="noopener noreferrer">Explore Yesterday, by Betty Mae ↗</a></div></section>
+</main>
+<footer class="wrap footer"><span>Amelia Zmuda · From A to Z</span><a href="/">← Back to portfolio</a><span>Made with love for Betty.</span></footer>
+</body>
+</html>
