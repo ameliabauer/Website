@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grandma's Stories - Case study - Amelia Zmuda</title>
+<title>Yesterday by Betty Mae (Grandma's Stories) - Case study - Amelia Zmuda</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
@@ -190,6 +190,13 @@ a { color: inherit; }
 .wrap { width: var(--wrap); margin-inline: auto; }
 
 /* ---------- Portfolio nav ---------- */
+.site-nav .wrap { justify-content: flex-start; }
+.site-nav .monogram { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--pale); transition: transform .5s ease; text-decoration: none; }
+.site-nav .monogram:hover { transform: rotate(-12deg) scale(1.06); }
+.site-nav .monogram svg { width: 15px; height: 28px; overflow: visible; fill: none; stroke: url(#hy); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.case-subtitle { display: block; margin-top: .12em; font-size: .58em; line-height: 1.15; font-weight: 400; color: var(--ink-soft); }
+.live-product-top { margin-top: 24px; }
+@media (max-width: 600px) { .case-subtitle { font-size: .52em; } }
 .site-nav { position: sticky; top: 0; z-index: 20; background: rgba(251, 248, 243, .9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
 .site-nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
 .wordmark { display: flex; align-items: baseline; gap: 2px; text-decoration: none; font-family: var(--display); font-size: 1.35rem; }
@@ -403,12 +410,18 @@ section.tint { background: var(--paper-2); }
 
 <header class="site-nav">
   <div class="wrap">
-    <a class="wordmark" href="#top">Amelia <span class="z">Z</span></a>
-    <nav aria-label="Portfolio">
-      <a href="#top" aria-current="page">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a class="monogram" href="#top" aria-label="Amelia Zmuda — back to top">
+      <svg viewBox="8 4 84 156" aria-hidden="true">
+        <defs>
+          <linearGradient id="hy" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8db6ea"></stop>
+            <stop offset=".55" stop-color="#5d63c9"></stop>
+            <stop offset="1" stop-color="#c487d4"></stop>
+          </linearGradient>
+        </defs>
+        <path d="M22 36 C24 20 42 10 60 11 C80 12 88 30 77 47 C69 60 52 69 39 73 C32 76 31 83 40 84 C53 85 60 91 59 104 C57 124 45 146 30 152 C17 157 12 146 22 136 C35 124 62 115 86 109"></path>
+      </svg>
+    </a>
   </div>
 </header>
 
@@ -419,8 +432,9 @@ section.tint { background: var(--paper-2); }
     <div class="wrap hero-top">
       <div>
         <p class="eyebrow"><span>Case study</span><span>Personal product</span><span>2026</span></p>
-        <h1>Grandma's Stories</h1>
+        <h1>Yesterday by Betty Mae <span class="case-subtitle">(Grandma's Stories)</span></h1>
         <p class="lede">What if simply picking up a photo and talking about it meant the story would be preserved, in her own voice, forever?</p>
+        <a class="btn solid live-product-top" href="https://yesterdaybybettymae.com" target="_blank" rel="noopener">Explore the live app <span aria-hidden="true">→</span></a>
       </div>
       <dl class="facts">
         <div><dt>My role</dt><dd>Product owner, UX and visual designer, front-end developer</dd></div>
