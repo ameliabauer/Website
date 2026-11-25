@@ -295,7 +295,7 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
 
   <div class="amz-name"><span class="mg c1" style="--i:0">A</span><span class="mg c2" style="--i:1">m</span><span class="mg c3" style="--i:2">e</span><span class="mg c4" style="--i:3">l</span><span class="mg c1" style="--i:4">i</span><span class="mg c2" style="--i:5">a</span><span class="mg" style="--i:6">&nbsp;</span><span class="mg mgz" style="--i:7"><svg class="czg" aria-hidden="true"><use href="#amz-cz"></use></svg></span><span class="mg c1" style="--i:8">m</span><span class="mg c2" style="--i:9">u</span><span class="mg c3" style="--i:10">d</span><span class="mg c4" style="--i:11">a</span></div>
 </div>
-<p class="enter-hint">Click the window to enter</p>
+<p class="enter-hint">Tap or click the window to open</p>
 </section>
 <div id="portfolio-content" hidden>
 <header class="portfolio-header">
@@ -542,7 +542,12 @@ a.project-card:focus-visible { outline:3px solid #a99be8; outline-offset:4px; }
       if (stamps) { requestAnimationFrame(function () { stamps.classList.add('play'); }); }
     }, 650);
   }
-  logo.addEventListener('click', function () { window.setTimeout(enterWhenOpen, 360); });
+  /* A simple click anywhere on the window/logo should open the shade.
+     Keep drag-to-open as an optional interaction, not a requirement. */
+  logo.addEventListener('click', function () {
+    if (logo.amzOpen) logo.amzOpen();
+    window.setTimeout(enterWhenOpen, 420);
+  });
   logo.setAttribute('role', 'button');
   logo.setAttribute('tabindex', '0');
   logo.setAttribute('aria-label', 'Open the airplane window to enter the portfolio');
